@@ -1,4 +1,6 @@
+
 <?php require_once('includes/db.php');
+//vercion 2
 
 if(isset($mysqli,$_POST['submit'])){
 	$username = mysqli_real_escape_string($mysqli,$_POST['username']);
