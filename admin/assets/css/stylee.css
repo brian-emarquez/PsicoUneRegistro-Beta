@@ -21,6 +21,7 @@ a, a:hover, a:focus {
     transition: all 0.3s;
 }
 
+/*barra central*/
 .navbar {
     padding: 15px 10px;
     background: #363434;

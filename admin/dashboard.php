@@ -16,9 +16,10 @@
          <!-- Bootstrap CSS CDN -->
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
         <!-- Our Custom CSS -->
-        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/stylee.css">
         <link rel="stylesheet" href="assets/awesome/font-awesome.css">
         <link rel="stylesheet" href="assets/css/animate.css">
+        
     </head>
     
     <body>
@@ -106,11 +107,10 @@
             <!-- Page Content Holder -->
             <div id="content">
              
-                <div clas="col-md-12">
-                    </div>
-         
-                
+                <div clas="col-md-12"></div>
+        
                 <nav class="navbar navbar-default sammacmedia">
+                <hr align="left" noshade="noshade" size="2" width="100%" />
                     <div class="container-fluid">
 
                         <div class="navbar-header" id="sams">
@@ -123,9 +123,11 @@
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav navbar-right  makotasamuel">
                                 <li><a href="#"><?php require_once('includes/name.php');?></a></li>
-                                <li ><a href="logout.php"><i class="fa fa-power-off"> Cerrar sesión</i></a></li>
+                                
+                                <li ><a href="logout.php"> <font color="#ECE2E0"><i class="fa fa-power-off"> Cerrar sesión</i></a></li>
            
                             </ul>
+                           
                         </div>
                     </div>
                 </nav>
@@ -165,17 +167,33 @@
                     </div>
                 </div>
 
+                <div class="col-lg-6 col-md-6">
+                    <div class="panel panel strover sammacmedia">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <i class="fa fa-link fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge"><?php echo $cases;?></div>
+                                    <div>Número total de casos</div>
+                                </div>
+                            </div>
+                        </div>
+                     
+                    </div>
+                </div>
+
                     
                     
             </div>
-                <div class="line"></div>
+                <div class="line" ></div>
                 <footer>
-            <p class="text-center">
-            Psicoune &copy;<?php echo date("Y ");?> -------------------------------------------------------------------------- 
+            <p class="text-center"> Psicoune &copy;<?php echo date("Y ");?> 
             </p>
             </footer>
             </div>
-
+       
           
         <!--flex derecho-->
         

@@ -2,7 +2,7 @@
 
 <?php require_once('includes/session.php');
       require_once('includes/conn.php');
-$sqlE =mysqli_query($mysqli,"SELECT * FROM users WHERE username='{$_SESSION['username']}'");
+$sqlE =mysqli_query($mysqli,"SELECT * FROM usersrpo WHERE username='{$_SESSION['username']}'");
 $eprow=mysqli_fetch_array($sqlE);
 ?>
 <!DOCTYPE html>

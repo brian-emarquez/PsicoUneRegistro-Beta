@@ -158,14 +158,14 @@
                 </thead>
                     <?php
                                    $a=1;
-                    $query=mysqli_query($mysqli,"select *from `users` ");
+                    $query=mysqli_query($mysqli,"select *from `usersrpo` ");
                      while($row=mysqli_fetch_array($query))
                         {
                           
                           ?>
                           <tr>
                               <td><?php echo $a;?></td> 
-                            <td><?php echo $row['name'];?></td>
+                            <td><?php echo $row['users'];?></td>
                             <td><?php echo $row['surname'];?></td>
                             <td><?php echo $row['username'];?></td>  
                             <td><?php echo $row['email'];?></td>
