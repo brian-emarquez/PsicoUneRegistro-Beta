@@ -22,7 +22,6 @@
     <body>
 
 
-
     <div class="wrapper">
             <!-- Sidebar Holder -->
             <nav id="sidebar" class="sammacmedia">
@@ -109,13 +108,15 @@
                 </ul>
             </nav>
 
+            <!-- Page Content Holder -->
             <div id="content">
              
                 <div clas="col-md-12">
+                    <img src="assets/image/ssm.jpg" class="img-thumbnail">
                     </div>
          
                 
-                <nav class="navbar navbar-default sammacmedia">
+               <nav class="navbar navbar-default sammacmedia">
                     <div class="container-fluid">
 
                         <div class="navbar-header" id="sams">
@@ -143,14 +144,9 @@
                             $surname = mysqli_real_escape_string($mysqli,$_POST['surname']);
                             $email = mysqli_real_escape_string($mysqli,$_POST['email']);
                             $phon = mysqli_real_escape_string($mysqli,$_POST['phone']); 
-                            $gender = mysqli_real_escape_string($mysqli,$_POST['gender']);
-                            $dni = mysqli_real_escape_string($mysqli,$_POST['dni']);       
-                            $edad = mysqli_real_escape_string($mysqli,$_POST['edad']); 
-                            $cursos = mysqli_real_escape_string($mysqli,$_POST['cursos']);  
-                            $pais = mysqli_real_escape_string($mysqli,$_POST['pais']);  
-                            $ciudad = mysqli_real_escape_string($mysqli,$_POST['ciudad']);     
+                            $gender = mysqli_real_escape_string($mysqli,$_POST['gender']);     
                             $joined = date(" d M Y ");
-                            $people_id = rand(9999999,1000000);    
+                            $employee_id = rand(9999999,1000000);    
                             $tmp = rand(1,9999);
                             $phone = '263'.$phon;   
                             $file = $_FILES['file'];
@@ -172,18 +168,18 @@
                             ?>
                              <div class="alert alert-danger samuel animated shake" id="sams1">
                         <a href="#" class="close" data-dismiss="alert">&times;</a>
-                        <strong> Danger! </strong><?php echo'Lo sientimos, el correo electrónico ya está asignado a alguien';?></div>
+                        <strong> Danger! </strong><?php echo'sorry the email is already allocated to someone';?></div>
                         <?php    
                        }elseif(mysqli_num_rows($res_n) > 0){
                         ?>
                         <div class="alert alert-danger samuel animated shake" id="sams1">
                         <a href="#" class="close" data-dismiss="alert">&times;</a>
-                        <strong> Danger! </strong><?php echo'Lo sientimos el numero de celular ya está asignado a alguien';?></div>
+                        <strong> Danger! </strong><?php echo'sorry the phone is already allocated to someone';?></div>
                         <?php    
                         }
                     else{      
                   
-                $sql = "INSERT INTO people(name,surname,email,joined,gender,phone,tmp,people_id,dni,edad,cursos,pais,ciudad)VALUES('$name','$surname','$email','$joined','$gender','$phone','$tmp','$people_id','$dni','$edad','$cursos','$pais','$ciudad')";
+                $sql = "INSERT INTO people(name,surname,email,joined,gender,phone,tmp,people_id)VALUES('$name','$surname','$email','$joined','$gender','$phone','$tmp','$employee_id')";
                 $results = mysqli_query($mysqli,$sql);
                 if(in_array($fileActualExt, $allowed)){
                 if($fileError === 0){
@@ -203,157 +199,112 @@
                               ?>
                         <div class="alert alert-success strover animated bounce" id="sams1">
                         <a href="#" class="close" data-dismiss="alert">&times;</a>
-                        <strong> Exitosamente! </strong><?php echo'Agregado Correctamente';?></div>
+                        <strong> Exitosamente! </strong><?php echo'Thank you for adding new employee';?></div>
                         <?php
 
                           }else{
                                 ?>
                         <div class="alert alert-danger samuel animated shake" id="sams1">
                         <a href="#" class="close" data-dismiss="alert">&times;</a>
-                        <strong> Danger! </strong><?php echo'Huy! Algo salió mal';?></div>
+                        <strong> Danger! </strong><?php echo'OOPS something went wrong';?></div>
             
                         <?php    
                           }      
                  }
             }
-            ?>
-            <div class="panel panel-default sammacmedia">
-                <div class="panel-heading"> Agregar Nueva Persona
-            </div>
-            <div class="panel-body">
-                <form method="post" action="a_people.php" enctype="multipart/form-data">
-    
-            <div class="row form-group">
-                <div class="col-lg-6">
-                <label>Nombres</label>
-                    <input type="text" class="form-control" name="fname"  required>
-                </div>
-    
-                 <div class="col-lg-6">
-                <label>Apellidos</label>
-                    <input type="text" class="form-control" name="surname" required>
-                </div>  
-            </div>
-    
-            <div class="row form-group">
-              <div class="col-lg-6">
-                <label>Email</label>
-                  <input type="email" class="form-control" name="email" required>
-                </div>  
-    
-                 <div class="col-lg-6">
-                <label>Celular</label>
-                  <input type="text" class="form-control" name="phone" required>
-                </div>  
-            </div> 
-                      
-             <div class="row form-group">
-              <div class="col-lg-6">
-                <label>Imagen</label>
-                    <input type="file" class="form-control" name="file" required>
-                </div>  
-    
-                 <div class="col-lg-6">
-                 <label>Género</label>
-                 <select class="form-control" name="gender">
-                    <option>F</option>
-                     <option>M</option>      
-                 </select>
-                </div>  
-            </div>
-    
-            <div class="row form-group">
-                <div class="col-lg-6">
-                <label>DNI</label>
-                    <input type="text" class="form-control" name="dni" required>
-                </div>  
-    
-                <div class="col-lg-6">
-                <label>Edad</label>
-                     <input type="text" class="form-control" name="edad" required>
-                </div> 
-            </div> 
-            
-           <div class="row form-group">
-                <div class="col-lg-6">
-                <label>Cursos</label>
-                    <input type="text" class="form-control" name="cursos" required>
-                </div>  
-    
-                <div class="col-lg-6">
-                <label>Pais</label>
-                     <input type="text" class="form-control" name="pais" required>
-                </div> 
-            </div>
-    
-                  
-           <div class="row form-group">
-                <div class="col-lg-6">
-                <label>Ciudad</label>
-                    <input type="text" class="form-control" name="ciudad" required>
-                </div>  
-    
                 
-            </div>
-    
-    
-    
-           
-                    <div class="row">
-                    <div class="col-md-6">
-                      <button type="submit" name="submit" class="btn btn-suc btn-block"><span class="fa fa-plus"></span> Agregar</button>  
-                    </div>
-                         <div class="col-md-6">
-                      <button type="reset" class="btn btn-dan btn-block"><span class="fa fa-times"></span> Cancelar</button>  
-                    </div>
-                    </div>
-                </form>
-    
+                ?>
+		<div class="panel panel-default sammacmedia">
+            <div class="panel-heading"> SMS Agregar nuevo empleado
+</div>
+        <div class="panel-body">
+        <form method="post" action="a_people.php" enctype="multipart/form-data">
+         <div class="row form-group">
+          <div class="col-lg-6">
+            <label>Nombre</label>
+              <input type="text" class="form-control" name="fname" pattern="[A-Za-z]{3,}" required>
+            </div>  
+             <div class="col-lg-6">
+            <label>Apellido</label>
+              <input type="text" class="form-control" name="surname" pattern="[A-Za-z]{3,}" required>
+            </div>  
+        </div>
+            <div class="row form-group">
+          <div class="col-lg-6">
+            <label>Email</label>
+              <input type="email" class="form-control" name="email" required>
+            </div>  
+             <div class="col-lg-6">
+            <label>Teléfono</label>
+              <input type="text" class="form-control" name="phone" required>
+            </div>  
+        </div>   
+         <div class="row form-group">
+          <div class="col-lg-6">
+            <label>Imagen</label>
+             <input type="file" class="form-control" name="file" required>
+            </div>  
+             <div class="col-lg-6">
+            <label>Género</label>
+             <select class="form-control" name="gender">
+              <option>F</option>
+              <option>M</option>      
+              </select>
+            </div>  
+        </div>
+
+                <div class="row">
+                <div class="col-md-6">
+                  <button type="submit" name="submit" class="btn btn-suc btn-block"><span class="fa fa-plus"></span> Proceso</button>  
                 </div>
-                    </div>
-                    <div class="line"></div>
-                    <footer>
-                     <p class="text-center">
-                         Psicoune &copy;<?php echo date("Y ")?>------------------------------------------------------------------------------------------------------
-                    </p>
-                    </footer>
-                    </div>
-    
-            <!--flex derecho-->
-            
-           
-            <!--flex derecho-->
-    
+                     <div class="col-md-6">
+                  <button type="reset" class="btn btn-dan btn-block"><span class="fa fa-times"></span> Cancelar</button>  
+                </div>
+                </div>
+            </form>
+
             </div>
-             
-    
-            <!-- jQuery CDN -->
-             <script src="assets/js/jquery-1.10.2.js"></script>
-             <!-- Bootstrap Js CDN -->
-             <script src="assets/js/bootstrap.min.js"></script>
-    
-             <script type="text/javascript">
-                 $(document).ready(function () {
-                     $('#sidebarCollapse').on('click', function () {
-                         $('#sidebar').toggleClass('active');
-                     });
+                </div>
+                <div class="line"></div>
+                <footer>
+            <p class="text-center">
+            CAAZ Security Matters System &copy;<?php echo date("Y ");?>    
+            </p>
+            </footer>
+            </div>
+            
+        </div>
+
+
+
+
+
+        <!-- jQuery CDN -->
+         <script src="assets/js/jquery-1.10.2.js"></script>
+         <!-- Bootstrap Js CDN -->
+         <script src="assets/js/bootstrap.min.js"></script>
+
+         <script type="text/javascript">
+             $(document).ready(function () {
+                 $('#sidebarCollapse').on('click', function () {
+                     $('#sidebar').toggleClass('active');
                  });
-                 $('sams').on('click', function(){
-                     $('makota').addClass('animated tada');
-                 });
-             </script>
-             <script type="text/javascript">
-    
-            $(document).ready(function () {
-     
-                window.setTimeout(function() {
-            $("#sams1").fadeTo(1000, 0).slideUp(1000, function(){
-            $(this).remove(); 
-            });
-                }, 5000);
-     
-            });
-        </script>
-        </body>
-    </html>
-    
+             });
+             $('sams').on('click', function(){
+                 $('makota').addClass('animated tada');
+             });
+         </script>
+         <script type="text/javascript">
+
+        $(document).ready(function () {
+ 
+            window.setTimeout(function() {
+        $("#sams1").fadeTo(1000, 0).slideUp(1000, function(){
+        $(this).remove(); 
+        });
+            }, 5000);
+ 
+        });
+    </script>
+    </body>
+</html>

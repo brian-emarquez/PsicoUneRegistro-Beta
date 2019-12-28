@@ -1,7 +1,6 @@
 
 <SCRIPT LANGUAGE="JavaScript">
 currentTime=new Date();
-//getHour() function will retrieve the hour from current time
 if(currentTime.getHours()<12)
 document.write("<b>Buenos Dias </b>");
 else if(currentTime.getHours()<17)
