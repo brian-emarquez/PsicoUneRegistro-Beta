@@ -143,10 +143,10 @@
                 <tr>
                     <th>No</th>
                
-                    <th> Nombre </th>
-                    <th> Apellido </th>                   
+                    <th> Nombres </th>
+                    <th> Apellidos </th>                   
                     <th> Email </th>
-                    <th> teléfono </th>
+                    <th> Celular </th>
                     <th> Género </th>
                     <th> Acción </th>
                     
@@ -180,7 +180,6 @@
                             $a++;
                       }
                        
-
           
                       if (isset($_GET['idx']) && is_numeric($_GET['idx']))
                       {
@@ -213,10 +212,12 @@
                 {
 
                 }
+                
                       ?>
               
-               
                 </table>
+                <script>var pfHeaderImgUrl = '';var pfHeaderTagline = '';var pfdisableClickToDel = 0;var pfHideImages = 0;var pfImageDisplayStyle = 'right';var pfDisablePDF = 0;var pfDisableEmail = 0;var pfDisablePrint = 0;var pfCustomCSS = '';var pfBtVersion='2';(function(){var js,pf;pf=document.createElement('script');pf.type='text/javascript';pf.src='//cdn.printfriendly.com/printfriendly.js';document.getElementsByTagName('head')[0].appendChild(pf)})();</script><a href="https://www.printfriendly.com" style="color:#6D9F00;text-decoration:none;" class="printfriendly" onclick="window.print();return false;" title="Printer Friendly and PDF"><img style="border:none;-webkit-box-shadow:none;box-shadow:none;" src="//cdn.printfriendly.com/buttons/printfriendly-pdf-email-button.png" alt="Print Friendly and PDF"/></a>
+
             </div>
                 </div>
                 <div class="line"></div>

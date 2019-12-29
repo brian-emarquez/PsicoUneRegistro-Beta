@@ -139,7 +139,7 @@
                 <div class="line"></div>
                                             <?php
                             if(isset($mysqli,$_POST['submit'])){
-                            $name = mysqli_real_escape_string($mysqli,$_POST['name']);
+                            $name = mysqli_real_escape_string($mysqli,$_POST['users']);
                             $surname = mysqli_real_escape_string($mysqli,$_POST['surname']);
                             $email = mysqli_real_escape_string($mysqli,$_POST['email']);
                             $phon = mysqli_real_escape_string($mysqli,$_POST['phone']); 
@@ -163,9 +163,9 @@
                               else{ 
                             //$password=md5($cpassword);
                             $password=$cpassword;
-                            $sql_n = "SELECT * FROM users WHERE phone ='$phone'";
+                            $sql_n = "SELECT * FROM usersrpo WHERE phone ='$phone'";
                             $res_n = mysqli_query($mysqli, $sql_n);    
-                            $sql_e = "SELECT * FROM users WHERE email ='$email'";
+                            $sql_e = "SELECT * FROM usersrpo WHERE email ='$email'";
                             $res_e = mysqli_query($mysqli, $sql_e);
                             if(mysqli_num_rows($res_e) > 0){
                             ?>
@@ -182,7 +182,7 @@
                         }
                     else{      
                   
-                $sql = "INSERT INTO users(name,surname,username,email,joined,type,permission,gender,phone,password)VALUES('$name','$surname','$username','$email','$joined','user','$permission','$gender','$phone','$password')";
+                $sql = "INSERT INTO usersrpo(users,surname,username,email,joined,type,permission,gender,phone,password)VALUES('$name','$surname','$username','$email','$joined','user','$permission','$gender','$phone','$password')";
                 $results = mysqli_query($mysqli,$sql);
                         
                         

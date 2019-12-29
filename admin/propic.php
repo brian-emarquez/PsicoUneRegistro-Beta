@@ -1,6 +1,6 @@
 <?php
 
-                                            $sql ="SELECT * FROM employees WHERE tmp='$tmp'";
+                                            $sql ="SELECT * FROM people WHERE tmp='$tmp'";
                                             $res = mysqli_query($mysqli,$sql);
                                             if(mysqli_num_rows($res) > 0){
                                                 while($row = mysqli_fetch_assoc($res)){
