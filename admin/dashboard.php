@@ -123,7 +123,7 @@
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav navbar-right  makotasamuel">
                                 <li><a href="v_users.php"><font color="#ECE2E0"><?php require_once('includes/name.php');?></a></li>
-                                <!--<li ><a href="logout.php"> <font color="#ECE2E0"><i class="fa fa-power-off"> Cerrar sesión</i></a></li> -->
+                                <li ><a href="logout.php"> <font color="#ECE2E0"><i class="fa fa-power-off"> Cerrar sesión</i></a></li> 
            
                             </ul>
                            

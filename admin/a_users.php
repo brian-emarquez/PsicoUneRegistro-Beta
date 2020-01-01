@@ -139,10 +139,10 @@
                 <div class="line"></div>
                                             <?php
                             if(isset($mysqli,$_POST['submit'])){
-                            $name = mysqli_real_escape_string($mysqli,$_POST['users']);
+                            $name = mysqli_real_escape_string($mysqli,$_POST['name']);
                             $surname = mysqli_real_escape_string($mysqli,$_POST['surname']);
                             $email = mysqli_real_escape_string($mysqli,$_POST['email']);
-                            $phon = mysqli_real_escape_string($mysqli,$_POST['phone']); 
+                            $phone = mysqli_real_escape_string($mysqli,$_POST['phone']); 
                             $username = mysqli_real_escape_string($mysqli,$_POST['username']); 
                             $password = mysqli_real_escape_string($mysqli,$_POST['password']);
                             $cpassword = mysqli_real_escape_string($mysqli,$_POST['cpassword']);     
@@ -150,22 +150,25 @@
                             $gender = mysqli_real_escape_string($mysqli,$_POST['gender']);     
                             $joined = date(" d M Y ");
                         
-                            $phone = '263'.$phon;    
+                            //$phone = '263'.$phon;  
+                           
                            if($password != $cpassword){
                                //echo 'Inbrese la contraseña de manera correcta';
                                ?>
                                <div class="alert alert-danger samuel animated shake" id="sams1">
                                <a href="#" class="close" data-dismiss="alert">&times;</a>
-                               <strong> Danger! </strong><?php echo'La Contrasela no Coinciden';?></div>
+                               <strong> Error! </strong><?php echo'La Contrasela no Coinciden';?></div>
                                <?php
+
+                            
                            }
                             
                               else{ 
                             //$password=md5($cpassword);
                             $password=$cpassword;
-                            $sql_n = "SELECT * FROM usersrpo WHERE phone ='$phone'";
+                            $sql_n = "SELECT * FROM users WHERE phone ='$phone'";
                             $res_n = mysqli_query($mysqli, $sql_n);    
-                            $sql_e = "SELECT * FROM usersrpo WHERE email ='$email'";
+                            $sql_e = "SELECT * FROM users WHERE email ='$email'";
                             $res_e = mysqli_query($mysqli, $sql_e);
                             if(mysqli_num_rows($res_e) > 0){
                             ?>
@@ -182,7 +185,7 @@
                         }
                     else{      
                   
-                $sql = "INSERT INTO usersrpo(users,surname,username,email,joined,type,permission,gender,phone,password)VALUES('$name','$surname','$username','$email','$joined','user','$permission','$gender','$phone','$password')";
+                $sql = "INSERT INTO users(name,surname,username,email,joined,type,permission,gender,phone,password)VALUES('$name','$surname','$username','$email','$joined','user','$permission','$gender','$phone','$password')";
                 $results = mysqli_query($mysqli,$sql);
                         
                         
@@ -199,7 +202,7 @@
                             ?>
                          <div id="sams1" class="sufee-alert alert with-close alert-danger alert-dismissible fade show col-lg-12">
 											<span class="badge badge-pill badge-danger">Error</span>
-											OOPS something went wrong
+											OOPS Algo salio mal
 											<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 												<span aria-hidden="true">&times;</span>
 											</button>
@@ -232,7 +235,7 @@
             </div>  
              <div class="col-lg-6">
             <label>Celular</label>
-              <input type="text" class="form-control" name="phone" placeholder="773452120" required>
+              <input type="text" class="form-control" name="phone" placeholder="95836625" required>
             </div>  
         </div>   
          <div class="row form-group">
@@ -281,7 +284,7 @@
                 <div class="line"></div>
                 <footer>
             <p class="text-center">
-            Psicoune &copy;<?php echo date("Y ");?> ---------------------------------------------------------------------------------------------------------------
+            Psicoune &copy;<?php echo date("Y ");?> 
             </p>
             </footer>
             </div>

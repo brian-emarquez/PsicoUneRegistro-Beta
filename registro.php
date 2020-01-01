@@ -10,13 +10,14 @@
 		$nombre = $mysqli->real_escape_string($_POST['username']);	
 		$usuario = $mysqli->real_escape_string($_POST['users']);
 		$surname = $mysqli->real_escape_string($_POST['surname']);	
-		$password = $mysqli->real_escape_string($_POST['password']);	
+		$password = $mysqli->real_escape_string($_POST['password']);
 		$con_password = $mysqli->real_escape_string($_POST['con_password']);	
 		$email = $mysqli->real_escape_string($_POST['email']);	
 		$captcha = $mysqli->real_escape_string($_POST['g-recaptcha-response']);
 		
 		$activo = 0;
-		$permission= 1;
+		$permission = 1;
+		$type = 'user';
 		$secret = '6LcFq8UUAAAAAIkExRMo6d3rPAUqk7NTDMN1S-uo';
 		
 		if(!$captcha){
@@ -61,7 +62,7 @@
 				$pass_hash = $password;
 				$token = generateToken();
 				
-				$registro = registraUsuario($usuario, $pass_hash, $nombre, $email, $activo, $token, $surname,$permission);
+				$registro = registraUsuario($usuario, $pass_hash, $nombre, $email, $activo, $token, $surname,$permission,$type);
 
 				
 				if($registro >= 0 )

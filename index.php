@@ -9,7 +9,7 @@ if(isset($mysqli,$_POST['submit'])){
 	$password=$password;
 	//print_r($password);exit; // muentra el contraseña enviada
 
-	$query1=mysqli_query($mysqli,"SELECT username, surname, password, users, permission FROM usersrpo");
+	$query1=mysqli_query($mysqli,"SELECT username, surname, password, type, users, permission FROM usersrpo");
 
 	while($row=mysqli_fetch_array($query1))
 	{
@@ -17,16 +17,20 @@ if(isset($mysqli,$_POST['submit'])){
 		$db_surname=$row["surname"];
 		$db_username=$row["username"];
 		$db_password=$row["password"];
+		$db_type=$row["type"];
         $db_per=$row["permission"];
 		
 		if($username==$db_username && $password==$db_password){
 			session_start();
 			$_SESSION["username"]=$db_username;
+			$_SESSION["type"]=$db_type;
             $_SESSION["permission"]=$db_per;
             $_SESSION["users"]=$db_name;
-            $_SESSION["surname"]=$db_surname;
+			$_SESSION["surname"]=$db_surname;
+			
+			if($_SESSION["type"]=='user'){
 			header("Location:admin/dashboard.php");
-						
+			}			
 		}
 
     }
