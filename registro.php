@@ -14,7 +14,7 @@
 		$con_password = $mysqli->real_escape_string($_POST['con_password']);	
 		$email = $mysqli->real_escape_string($_POST['email']);	
 		$captcha = $mysqli->real_escape_string($_POST['g-recaptcha-response']);
-		
+		$joined = date(" d M Y ");
 		$activo = 0;
 		$permission = 1;
 		$type = 'user';
@@ -62,7 +62,7 @@
 				$pass_hash = $password;
 				$token = generateToken();
 				
-				$registro = registraUsuario($usuario, $pass_hash, $nombre, $email, $activo, $token, $surname,$permission,$type);
+				$registro = registraUsuario($usuario, $pass_hash, $nombre, $email, $activo, $token, $surname, $permission, $type, $joined);
 
 				
 				if($registro >= 0 )

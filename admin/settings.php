@@ -156,8 +156,9 @@ $eprow=mysqli_fetch_array($sqlE);
 
                                     <?php      
                                     }else{
-                                      $password =md5($cpassword);  
-                                $sqliU ="UPDATE users SET password='$password' WHERE username='{$_SESSION['username']}'";
+                                      //$password =md5($cpassword); 
+                                      $password =$cpassword; 
+                                $sqliU ="UPDATE usersrpo SET password='$password' WHERE username='{$_SESSION['username']}'";
                                 $res = mysqli_query($mysqli,$sqliU);
                                 if($res==1){
                                     ?>
@@ -172,12 +173,12 @@ $eprow=mysqli_fetch_array($sqlE);
                   
                             }
                 if(isset($mysqli,$_POST['update'])){
-                    $name = mysqli_real_escape_string($mysqli,$_POST['name']);
+                    $name = mysqli_real_escape_string($mysqli,$_POST['users']);
                     $surname = mysqli_real_escape_string($mysqli,$_POST['surname']);
                     $phone = mysqli_real_escape_string($mysqli,$_POST['phone']);
                     $email = mysqli_real_escape_string($mysqli,$_POST['email']);
                     
-                    $sqlTaru = "UPDATE usersrpo SET name ='$name', surname ='$surname', phone ='$phone', email ='$email' WHERE username= '{$_SESSION['username']}'";
+                    $sqlTaru = "UPDATE usersrpo SET users ='$name', surname ='$surname', phone ='$phone', email ='$email' WHERE username= '{$_SESSION['username']}'";
                     $resTaru = mysqli_query($mysqli,$sqlTaru);
                     if($resTaru==1){
                         ?>
@@ -206,11 +207,11 @@ $eprow=mysqli_fetch_array($sqlE);
         <div class="row form-group">
           <div class="col-lg-6">
             <label>Nombre</label>
-              <input type="text" class="form-control" name="name" pattern="[A-Za-z]{3,}" value="<?php echo $eprow['users'];?>" required>
+              <input type="text" class="form-control" name="users" value="<?php echo $eprow['users'];?>" required>
             </div>  
              <div class="col-lg-6">
             <label>Apellido</label>
-              <input type="text" class="form-control" name="surname" pattern="[A-Za-z]{3,}" value="<?php echo $eprow['surname'];?>" required>
+              <input type="text" class="form-control" name="surname" value="<?php echo $eprow['surname'];?>" required>
             </div>  
         </div>
             <div class="row form-group">
@@ -220,15 +221,19 @@ $eprow=mysqli_fetch_array($sqlE);
             </div>  
              <div class="col-lg-6">
             <label>celular</label>
-            <!--<input type="text" class="form-control" name="phone" required>-->
             <input type="text" class="form-control" name="phone"  value="<?php echo $eprow['phone'];?>" required> 
             </div>  
         </div>   
          <div class="row form-group">
-          <div class="col-lg-3">
-            <label>Genero</label>
-             <input type="text" class="form-control"  value="<?php echo $eprow['gender'];?>" readonly>
+         
+          <div class="col-lg-6">
+            <label>Género</label>
+             <select class="form-control" name="gender">
+              <option>F</option>
+              <option>M</option>     
+              </select>
             </div>  
+            
               <div class="col-lg-3">
             <label>Nvel de Acceso</label>
              <input type="text" class="form-control"  value="<?php echo $eprow['permission'];?>" readonly>
@@ -291,7 +296,7 @@ $eprow=mysqli_fetch_array($sqlE);
                 <div class="line"></div>
                 <footer>
             <p class="text-center">
-            Psicoune &copy;<?php echo date("Y ");?> ---------------------------------------------------------------------------------------------------------------
+            Psicoune &copy;<?php echo date("Y ");?> 
             </p>
             </footer>
             </div>

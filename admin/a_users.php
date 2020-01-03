@@ -149,8 +149,8 @@
                             $permission = mysqli_real_escape_string($mysqli,$_POST['permission']); 
                             $gender = mysqli_real_escape_string($mysqli,$_POST['gender']);    
                             $joined = date(" d M Y ");
-                            //$phone = '263'.$phon;  
-                            $token = 1;
+                            $token=md5("token");
+                            $activacion = 1;
                            
                             if($password != $cpassword){
                                //echo 'Inbrese la contraseña de manera correcta';
@@ -162,7 +162,7 @@
                             }
                             
                              else{ 
-                              $password=md5($cpassword);
+                              //$password=md5($cpassword);
                               $password=$cpassword;
                               $sql_n = "SELECT * FROM usersrpo WHERE phone ='$phone'";
                               $res_n = mysqli_query($mysqli, $sql_n);    
@@ -182,8 +182,7 @@
                        }
                     else{      
                   
-                //$sql = "INSERT INTO usersrpo(users,surname,username,email,joined,type,permission,gender,phone,password)VALUES('$name','$surname','$username','$email','$joined','user','$permission','$gender','$phone','$password')";
-                  $sql = "INSERT INTO usersrpo(users,surname,password,username,email,phone,permission,gender,joined,type,token) VALUES('$name','$surname','$password','$username','$email','$phone','$permission','$gender','$joined','user','$token')";
+                $sql = "INSERT INTO usersrpo(users,surname,password,username,email,phone,permission,gender,joined,type,token,activacion) VALUES('$name','$surname','$password','$username','$email','$phone','$permission','$gender','$joined','user','$token','$activacion')";
                 $results = mysqli_query($mysqli,$sql);
                         
                         

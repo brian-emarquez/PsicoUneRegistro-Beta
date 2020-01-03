@@ -185,7 +185,7 @@
                       if (isset($_GET['idx']) && is_numeric($_GET['idx']))
                       {
                           $id = $_GET['idx'];
-                          if ($stmt = $mysqli->prepare("DELETE FROM users WHERE id = ? LIMIT 1"))
+                          if ($stmt = $mysqli->prepare("DELETE FROM usersrpo WHERE id = ? LIMIT 1"))
                           {
                               $stmt->bind_param("i",$id);
                               $stmt->execute();
@@ -222,7 +222,7 @@
                 <div class="line"></div>
                 <footer>
             <p class="text-center">
-            Psicoune &copy;<?php echo date("Y ");?> ---------------------------------------------------------------------------------------------------------------
+            Psicoune &copy;<?php echo date("Y ");?> 
             </p>
             </footer>
             </div>

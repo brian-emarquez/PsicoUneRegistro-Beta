@@ -105,13 +105,13 @@
 		}
 	}
 	
-	function registraUsuario($usuario, $pass_hash, $nombre, $email, $activo, $token, $surname, $permission, $type){
+	function registraUsuario($usuario, $pass_hash, $nombre, $email, $activo, $token, $surname, $permission, $type, $joined){
 
 		global $mysqli;
 
-		$stmt = $mysqli->prepare("INSERT INTO usersrpo (users, password, username, email, activacion, token, surname, permission, type) VALUES(?,?,?,?,?,?,?,?,?)");
+		$stmt = $mysqli->prepare("INSERT INTO usersrpo (users, password, username, email, activacion, token, surname, permission, type, joined) VALUES(?,?,?,?,?,?,?,?,?,?)");
 
-		$stmt->bind_param('ssssissss', $usuario, $pass_hash, $nombre, $email, $activo, $token, $surname, $permission, $type);
+		$stmt->bind_param('ssssisssss', $usuario, $pass_hash, $nombre, $email, $activo, $token, $surname, $permission, $type, $joined);
 
 	
 		

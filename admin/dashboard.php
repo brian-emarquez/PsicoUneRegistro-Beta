@@ -142,6 +142,7 @@
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge"><?php echo $users;?></div>
+                                    <a href="v_issue.php">
                                     <div>Número total de usuarios</div>
                                 </div>
                             </div>
