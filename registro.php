@@ -68,7 +68,7 @@
 				if($registro >= 0 )
 				{
 					
-						$url = 'http://'.$_SERVER["SERVER_NAME"].'/dashboard/proyectos/rpo/activar.php?id='.$registro.'&val='.$token;
+						$url = 'http://'.$_SERVER["SERVER_NAME"].'/dashboard/proyectos/PsicouneRegistro/activar.php?id='.$registro.'&val='.$token;
 								
 						$asunto = 'Activar Cuenta ';
 						$cuerpo = "Estimado $usuario: <br /><br />Para continuar con el proceso de registro, es indispensable de click en la siguiente Link 

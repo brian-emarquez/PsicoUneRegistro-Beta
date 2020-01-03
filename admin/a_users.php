@@ -139,7 +139,7 @@
                 <div class="line"></div>
                                             <?php
                             if(isset($mysqli,$_POST['submit'])){
-                            $name = mysqli_real_escape_string($mysqli,$_POST['name']);
+                            $name = mysqli_real_escape_string($mysqli,$_POST['users']);
                             $surname = mysqli_real_escape_string($mysqli,$_POST['surname']);
                             $email = mysqli_real_escape_string($mysqli,$_POST['email']);
                             $phone = mysqli_real_escape_string($mysqli,$_POST['phone']); 
@@ -147,45 +147,43 @@
                             $password = mysqli_real_escape_string($mysqli,$_POST['password']);
                             $cpassword = mysqli_real_escape_string($mysqli,$_POST['cpassword']);     
                             $permission = mysqli_real_escape_string($mysqli,$_POST['permission']); 
-                            $gender = mysqli_real_escape_string($mysqli,$_POST['gender']);     
+                            $gender = mysqli_real_escape_string($mysqli,$_POST['gender']);    
                             $joined = date(" d M Y ");
-                        
                             //$phone = '263'.$phon;  
+                            $token = 1;
                            
-                           if($password != $cpassword){
+                            if($password != $cpassword){
                                //echo 'Inbrese la contraseña de manera correcta';
                                ?>
                                <div class="alert alert-danger samuel animated shake" id="sams1">
                                <a href="#" class="close" data-dismiss="alert">&times;</a>
                                <strong> Error! </strong><?php echo'La Contrasela no Coinciden';?></div>
                                <?php
-
+                            }
                             
-                           }
-                            
-                              else{ 
-                            //$password=md5($cpassword);
-                            $password=$cpassword;
-                            $sql_n = "SELECT * FROM users WHERE phone ='$phone'";
-                            $res_n = mysqli_query($mysqli, $sql_n);    
-                            $sql_e = "SELECT * FROM users WHERE email ='$email'";
-                            $res_e = mysqli_query($mysqli, $sql_e);
-                            if(mysqli_num_rows($res_e) > 0){
+                             else{ 
+                              $password=md5($cpassword);
+                              $password=$cpassword;
+                              $sql_n = "SELECT * FROM usersrpo WHERE phone ='$phone'";
+                              $res_n = mysqli_query($mysqli, $sql_n);    
+                              $sql_e = "SELECT * FROM usersrpo WHERE email ='$email'";
+                              $res_e = mysqli_query($mysqli, $sql_e);
+                              if(mysqli_num_rows($res_e) > 0){
                             ?>
-                             <div class="alert alert-danger samuel animated shake" id="sams1">
+                            <div class="alert alert-danger samuel animated shake" id="sams1">
                         <a href="#" class="close" data-dismiss="alert">&times;</a>
-                        <strong> Advertencia! </strong><?php echo'Lo sentimos, el correo electrónico ya está asignado a alguien';?></div>
+                        <strong> Advertencia! </strong></div>
                         <?php    
                        }elseif(mysqli_num_rows($res_n) > 0){
                         ?>
                         <div class="alert alert-danger samuel animated shake" id="sams1">
                         <a href="#" class="close" data-dismiss="alert">&times;</a>
-                        <strong> Advertencia! </strong><?php echo'Lo sientimos, el numero de celular ya está asignado a alguien';?></div>
                         <?php    
-                        }
+                       }
                     else{      
                   
-                $sql = "INSERT INTO users(name,surname,username,email,joined,type,permission,gender,phone,password)VALUES('$name','$surname','$username','$email','$joined','user','$permission','$gender','$phone','$password')";
+                //$sql = "INSERT INTO usersrpo(users,surname,username,email,joined,type,permission,gender,phone,password)VALUES('$name','$surname','$username','$email','$joined','user','$permission','$gender','$phone','$password')";
+                  $sql = "INSERT INTO usersrpo(users,surname,password,username,email,phone,permission,gender,joined,type,token) VALUES('$name','$surname','$password','$username','$email','$phone','$permission','$gender','$joined','user','$token')";
                 $results = mysqli_query($mysqli,$sql);
                         
                         
@@ -221,23 +219,27 @@
         <div class="row form-group">
           <div class="col-lg-6">
             <label>Nombre</label>
-              <input type="text" class="form-control" name="name" pattern="[A-Za-z]{3,}" required>
+              <input type="text" class="form-control" name="users" required>
             </div>  
-             <div class="col-lg-6">
+            <div class="col-lg-6">
             <label>Apellido</label>
-              <input type="text" class="form-control" name="surname" pattern="[A-Za-z]{3,}" required>
+              <input type="text" class="form-control" name="surname"  required>
             </div>  
         </div>
+        
+        
             <div class="row form-group">
           <div class="col-lg-6">
             <label>Email</label>
               <input type="email" class="form-control" name="email" required>
             </div>  
+             
              <div class="col-lg-6">
             <label>Celular</label>
-              <input type="text" class="form-control" name="phone" placeholder="95836625" required>
+              <input type="text" class="form-control" name="phone"  required>
             </div>  
-        </div>   
+        </div>  
+
          <div class="row form-group">
           <div class="col-lg-6">
             <label>Nivel de acceso</label>
@@ -245,8 +247,8 @@
               <option>1</option>
               <option>2</option> 
              <option>3</option> 
-              </select>
-            </div>  
+             </select>
+             </div>  
              <div class="col-lg-6">
             <label>Género</label>
              <select class="form-control" name="gender">
@@ -258,8 +260,8 @@
          <div class="row form-group">
           <div class="col-lg-6">
             <label>Nombre de usuario</label>
-              <input type="text" class="form-control" name="username" pattern="[A-Za-z]{3,}">
-            </div>  
+              <input type="text" class="form-control" name="username" >
+            </div> 
              <div class="col-lg-3">
             <label>Contraseña</label>
               <input type="password" class="form-control" name="password">
@@ -268,8 +270,9 @@
             <label>Confirmar contraseña</label>
               <input type="password" class="form-control" name="cpassword">
             </div> 
-        </div>
+        </div> 
                 <div class="row">
+             <div class="row">
                 <div class="col-md-6">
                   <button type="submit" name="submit" class="btn btn-suc btn-block"><span class="fa fa-plus"></span> Agregar</button>  
                 </div>
@@ -296,10 +299,6 @@
 <!--flex derecho-->
             
         </div>
-
-
-
-
 
         <!-- jQuery CDN -->
          <script src="assets/js/jquery-1.10.2.js"></script>

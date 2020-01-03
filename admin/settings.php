@@ -177,7 +177,7 @@ $eprow=mysqli_fetch_array($sqlE);
                     $phone = mysqli_real_escape_string($mysqli,$_POST['phone']);
                     $email = mysqli_real_escape_string($mysqli,$_POST['email']);
                     
-                    $sqlTaru = "UPDATE users SET name ='$name', surname ='$surname', phone ='$phone', email ='$email' WHERE username= '{$_SESSION['username']}'";
+                    $sqlTaru = "UPDATE usersrpo SET name ='$name', surname ='$surname', phone ='$phone', email ='$email' WHERE username= '{$_SESSION['username']}'";
                     $resTaru = mysqli_query($mysqli,$sqlTaru);
                     if($resTaru==1){
                         ?>
@@ -206,7 +206,7 @@ $eprow=mysqli_fetch_array($sqlE);
         <div class="row form-group">
           <div class="col-lg-6">
             <label>Nombre</label>
-              <input type="text" class="form-control" name="name" pattern="[A-Za-z]{3,}" value="<?php echo $eprow['name'];?>" required>
+              <input type="text" class="form-control" name="name" pattern="[A-Za-z]{3,}" value="<?php echo $eprow['users'];?>" required>
             </div>  
              <div class="col-lg-6">
             <label>Apellido</label>
