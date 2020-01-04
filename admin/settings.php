@@ -2,6 +2,9 @@
 
 <?php require_once('includes/session.php');
       require_once('includes/conn.php');
+      
+     ;
+
 $sqlE =mysqli_query($mysqli,"SELECT * FROM usersrpo WHERE username='{$_SESSION['username']}'");
 $eprow=mysqli_fetch_array($sqlE);
 ?>
@@ -139,6 +142,7 @@ $eprow=mysqli_fetch_array($sqlE);
                             $old_password1 =mysqli_real_escape_string($mysqli,$_POST['old_password']);
                             $password =mysqli_real_escape_string($mysqli,$_POST['password']);
                             $cpassword =mysqli_real_escape_string($mysqli,$_POST['cpassword']);
+                            $joined =mysqli_real_escape_string($mysqli,$_POST['joined']);
                                 //$old_password=md5($old_password1);
                                 $old_password=$old_password1;
                                 if($eprow['password']!=$old_password){
@@ -234,7 +238,7 @@ $eprow=mysqli_fetch_array($sqlE);
               </select>
             </div>  
             
-              <div class="col-lg-3">
+              <div class="col-lg-6">
             <label>Nvel de Acceso</label>
              <input type="text" class="form-control"  value="<?php echo $eprow['permission'];?>" readonly>
             </div>
@@ -242,7 +246,7 @@ $eprow=mysqli_fetch_array($sqlE);
             <label>Miembro desde</label>
              <input type="text" class="form-control"  value="<?php echo $eprow['joined'];?>" readonly>
             </div>
-        </div>
+            </div>
 
                 <div class="row">
                 <div class="col-md-12">

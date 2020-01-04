@@ -122,7 +122,7 @@
 
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav navbar-right  makotasamuel">
-                                <li><a href="v_users.php"><font color="#ECE2E0"><?php require_once('includes/name.php');?></a></li>
+                                <li><a href="v_users.php"><?php require_once('includes/name.php');?></a></li>
                                 <li ><a href="logout.php"> <font color="#ECE2E0"><i class="fa fa-power-off"> Cerrar sesión</i></a></li> 
            
                             </ul>
@@ -135,6 +135,7 @@
                 <div class="row">
                 <div class="col-lg-6 col-md-6 ">
                     <div class="panel panel sammac sammacmedia">
+                    <a href="v_users.php">
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-4">
@@ -142,7 +143,7 @@
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge"><?php echo $users;?></div>
-                                    <a href="v_issue.php">
+                                    
                                     <div>Número total de usuarios</div>
                                 </div>
                             </div>
@@ -150,8 +151,10 @@
                        
                     </div>
                 </div>
+
                 <div class="col-lg-6 col-md-6">
                     <div class="panel panel strover sammacmedia">
+                    <a href="v_issue.php">
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-4">
@@ -167,16 +170,17 @@
                     </div>
                 </div>
 
-                <div class="col-lg-6 col-md-6">
-                    <div class="panel panel strover sammacmedia">
-                        <div class="panel-heading">
+                <div class="col-lg-6 col-md-6" >
+                   <div class="panel-success sammacmedia" style="background-color:#90A3BD" >
+                    <a href="settings.php">
+                        <div class="panel-heading" >
                             <div class="row">
                                 <div class="col-xs-4">
-                                    <i class="fa fa-link fa-5x"></i>
+                                    <i class="fa fa-cogs fa-5x" ></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge"><?php echo $cases;?></div>
-                                    <div>Número total de casos</div>
+                                    <div>Ajustes</div>
                                 </div>
                             </div>
                         </div>

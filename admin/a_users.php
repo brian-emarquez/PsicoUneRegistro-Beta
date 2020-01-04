@@ -261,11 +261,11 @@
             <label>Nombre de usuario</label>
               <input type="text" class="form-control" name="username" >
             </div> 
-             <div class="col-lg-3">
+             <div class="col-lg-6">
             <label>Contraseña</label>
               <input type="password" class="form-control" name="password">
             </div> 
-              <div class="col-lg-3">
+              <div class="col-lg-6">
             <label>Confirmar contraseña</label>
               <input type="password" class="form-control" name="cpassword">
             </div> 
