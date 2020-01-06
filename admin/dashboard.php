@@ -11,12 +11,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <title>Menu Princial</title>
+        <title>Menu Principal</title>
 
          <!-- Bootstrap CSS CDN -->
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
         <!-- Our Custom CSS -->
         <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/stylee.css">
         <link rel="stylesheet" href="assets/awesome/font-awesome.css">
         <link rel="stylesheet" href="assets/css/animate.css">
         
@@ -123,7 +124,7 @@
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav navbar-right  makotasamuel">
                                 <li><a href="v_users.php"><?php require_once('includes/name.php');?></a></li>
-                                <li ><a href="logout.php"> <font color="#ECE2E0"><i class="fa fa-power-off"> Cerrar sesión</i></a></li> 
+                                <li ><a href="logout.php"><i class="fa fa-power-off"> Cerrar sesión</i></a></li> 
            
                             </ul>
                            
@@ -171,7 +172,7 @@
                 </div>
 
                 <div class="col-lg-6 col-md-6" >
-                   <div class="panel-success sammacmedia" style="background-color:#90A3BD" >
+                <div class="panel panel strover sammacmedia" style="background-color:#90A3BD" >
                     <a href="settings.php">
                         <div class="panel-heading" >
                             <div class="row">
@@ -180,34 +181,148 @@
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge"><?php echo $cases;?></div>
-                                    <div>Ajustes</div>
+                                    <div>Ajustes del Usuarios</div>
                                 </div>
                             </div>
                         </div>
                      
                     </div>
-                </div>
-
-                    
-                    
+                </div>  
             </div>
-                <div class="line" ></div>
-                <footer>
-            <p class="text-center"> Psicoune &copy;<?php echo date("Y ");?> 
+            
+            
+<!-----------------------------------estadistica-------------------------------------------------->
+
+<HTML>
+<BODY>
+
+<meta charset="utf-8"> 
+<?php
+require_once("RandomClass.php");
+
+//Creamos un objeto de la clase randomTable
+$rand = new RandomTable();
+//insertamos un valor aleatorio
+$rand->insertRandom();
+//obtenemos toda la información de la tabla random
+$rawdata = $rand->getAllInfo();
+
+//nos creamos dos arrays para almacenar el tiempo y el valor numérico
+$valoresArray;
+$timeArray;
+//en un bucle for obtenemos en cada iteración el valor númerico y 
+//el TIMESTAMP del tiempo y lo almacenamos en los arrays 
+for($i = 0 ;$i<count($rawdata);$i++){
+    $valoresArray[$i]= $rawdata[$i][1];
+    //OBTENEMOS EL TIMESTAMP
+    $time= $rawdata[$i][2];
+    $date = new DateTime($time);
+    //ALMACENAMOS EL TIMESTAMP EN EL ARRAY
+    $timeArray[$i] = $date->getTimestamp()*1000;
+}
+
+?>
+<div id="contenedor"></div>
+
+<script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Importo el archivo Javascript de Highcharts directamente desde su servidor -->
+<script src="http://code.highcharts.com/stock/highstock.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+<script>
+
+chartCPU = new Highcharts.StockChart({
+    chart: {
+        renderTo: 'contenedor'
+        //defaultSeriesType: 'spline'
+        
+    },
+    rangeSelector : {
+        enabled: false
+    },
+    title: {
+        text: 'Gráfica'
+    },
+    xAxis: {
+        type: 'datetime'
+        //tickPixelInterval: 150,
+        //maxZoom: 20 * 1000
+    },
+    yAxis: {
+        minPadding: 0.2,
+        maxPadding: 0.2,
+        title: {
+            text: 'Valores',
+            margin: 10
+        }
+    },
+    series: [{
+        name: 'Valor',
+        data: (function() {
+                // generate an array of random data
+                var data = [];
+                <?php
+                    for($i = 0 ;$i<count($rawdata);$i++){
+                ?>
+                data.push([<?php echo $timeArray[$i];?>,<?php echo $valoresArray[$i];?>]);
+                <?php } ?>
+                return data;
+            })()
+    }],
+    credits: {
+            enabled: false
+    }
+});
+
+</script>   
+</BODY>
+
+</html>
+<!-----------------------------------estadistica-------------------------------------------------->
+
+            <div class="line" ></div>
+            <footer>
+                <p class="text-center"> Psicoune &copy;<?php echo date("Y ");?> 
             </p>
             </footer>
+            
             </div>
        
-          
-        <!--flex derecho-->
-        
-        
-       
-        <!--flex derecho-->
-
-        </div>
 
 
+<!--flex derecho-->
+<div id="barra">
+<div id="barra-lateral">
+    <div id="logo-menu">
+    </div>
+
+    <ul class="list-unstyled components">
+    <li class >
+                         
+    <li>
+         <li >
+             <a href="https://www.psicoune.org">
+            <i class="fa fa-external-link" style="color:#FFF"><p>Psicoune</p></i>
+            
+        </li>
+    </li>
+
+    
+    </li>
+         <li>
+            <a href="logout.php">
+            <i class="fa fa-sign-out" aria-hidden="true" style="color:#FFF"><p>Cerrar Sesion</p></i>
+             </a>
+        </li>
+    </li>
+
+    </li>
+    </ul>
+    </div>
+</div>
+</div>
+ <!--flex derecho-->
+
+</div>
 
 
 
