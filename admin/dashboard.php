@@ -20,6 +20,7 @@
         <link rel="stylesheet" href="assets/css/stylee.css">
         <link rel="stylesheet" href="assets/awesome/font-awesome.css">
         <link rel="stylesheet" href="assets/css/animate.css">
+
         
     </head>
     
@@ -131,9 +132,10 @@
                         </div>
                     </div>
                 </nav>
-
                 <div class="line"></div>
                 <div class="row">
+                         
+<!---------------------------------------inicio----------------------------------------->
                 <div class="col-lg-6 col-md-6 ">
                     <div class="panel panel sammac sammacmedia">
                     <a href="v_users.php">
@@ -152,7 +154,7 @@
                        
                     </div>
                 </div>
-
+<!---------------------------------------fin------------------------------------------->
                 <div class="col-lg-6 col-md-6">
                     <div class="panel panel strover sammacmedia">
                     <a href="v_issue.php">
@@ -184,40 +186,27 @@
                                     <div>Ajustes del Usuarios</div>
                                 </div>
                             </div>
-                        </div>
-                     
-                    </div>
-                </div>  
-            </div>
-            
+                     </div>
+                </div>
+            </div>      
+    </div>
             
 <!-----------------------------------estadistica-------------------------------------------------->
 
-<HTML>
-<BODY>
 
 <meta charset="utf-8"> 
 <?php
 require_once("RandomClass.php");
 
-//Creamos un objeto de la clase randomTable
 $rand = new RandomTable();
-//insertamos un valor aleatorio
 $rand->insertRandom();
-//obtenemos toda la información de la tabla random
 $rawdata = $rand->getAllInfo();
 
-//nos creamos dos arrays para almacenar el tiempo y el valor numérico
 $valoresArray;
-$timeArray;
-//en un bucle for obtenemos en cada iteración el valor númerico y 
-//el TIMESTAMP del tiempo y lo almacenamos en los arrays 
-for($i = 0 ;$i<count($rawdata);$i++){
+$timeArray;for($i = 0 ;$i<count($rawdata);$i++){
     $valoresArray[$i]= $rawdata[$i][1];
-    //OBTENEMOS EL TIMESTAMP
     $time= $rawdata[$i][2];
     $date = new DateTime($time);
-    //ALMACENAMOS EL TIMESTAMP EN EL ARRAY
     $timeArray[$i] = $date->getTimestamp()*1000;
 }
 
@@ -225,7 +214,6 @@ for($i = 0 ;$i<count($rawdata);$i++){
 <div id="contenedor"></div>
 
 <script src="https://code.jquery.com/jquery.js"></script>
-    <!-- Importo el archivo Javascript de Highcharts directamente desde su servidor -->
 <script src="http://code.highcharts.com/stock/highstock.js"></script>
 <script src="http://code.highcharts.com/modules/exporting.js"></script>
 <script>
@@ -233,7 +221,7 @@ for($i = 0 ;$i<count($rawdata);$i++){
 chartCPU = new Highcharts.StockChart({
     chart: {
         renderTo: 'contenedor'
-        //defaultSeriesType: 'spline'
+      
         
     },
     rangeSelector : {
@@ -244,8 +232,7 @@ chartCPU = new Highcharts.StockChart({
     },
     xAxis: {
         type: 'datetime'
-        //tickPixelInterval: 150,
-        //maxZoom: 20 * 1000
+        
     },
     yAxis: {
         minPadding: 0.2,
@@ -258,7 +245,6 @@ chartCPU = new Highcharts.StockChart({
     series: [{
         name: 'Valor',
         data: (function() {
-                // generate an array of random data
                 var data = [];
                 <?php
                     for($i = 0 ;$i<count($rawdata);$i++){
@@ -274,9 +260,18 @@ chartCPU = new Highcharts.StockChart({
 });
 
 </script>   
-</BODY>
 
-</html>
+<!-----------------------------------TEXT-------------------------------------------------->
+
+
+<!--inicio-->
+
+
+
+<!--fin-->    
+
+
+
 <!-----------------------------------estadistica-------------------------------------------------->
 
             <div class="line" ></div>
@@ -301,16 +296,16 @@ chartCPU = new Highcharts.StockChart({
     <li>
          <li >
              <a href="https://www.psicoune.org">
-            <i class="fa fa-external-link" style="color:#FFF"><p>Psicoune</p></i>
+             &nbsp;&nbsp;<i class="fa fa-external-link" style="color:#FFF">&nbsp; Psicoune</i>
             
         </li>
     </li>
-
+    <BR>
     
     </li>
          <li>
             <a href="logout.php">
-            <i class="fa fa-sign-out" aria-hidden="true" style="color:#FFF"><p>Cerrar Sesion</p></i>
+            &nbsp;&nbsp;<i class="fa fa-sign-out" aria-hidden="true" style="color:#FFF">&nbsp; Cerrar Sesion</i>
              </a>
         </li>
     </li>

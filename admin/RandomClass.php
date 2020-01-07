@@ -78,12 +78,4 @@ class RandomTable{
 }
 
 
-/*
-CREATE DATABASE TIME
-USE time
-
-CREATE TABLE `time`.`random` ( `ID` INT(11) NOT NULL AUTO_INCREMENT , `valor` INT(11) NOT NULL , `tiempo` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , PRIMARY KEY (`ID`)) ENGINE = InnoDB;
-SELECT * FROM `random`
-*/
-
 ?>
