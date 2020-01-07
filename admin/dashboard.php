@@ -20,6 +20,9 @@
         <link rel="stylesheet" href="assets/css/stylee.css">
         <link rel="stylesheet" href="assets/awesome/font-awesome.css">
         <link rel="stylesheet" href="assets/css/animate.css">
+        <link rel="stylesheet" href="assets/css/hover.css">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
 
         
     </head>
@@ -188,6 +191,30 @@
                             </div>
                      </div>
                 </div>
+
+
+                
+<!--inicio-->
+
+
+<body>
+    <div class="container col-lg-6 col-md-6">   
+        <div class="box">
+            <div class="icon"><i class="fa fa-search" aria-hidden="true">
+            </i></div>
+            <div class="content">
+                <h3>search</h3>
+                <p>hola ola holhola holaa hola hola hola hhola hola ola holaola hola</p>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+
+
+<!--fin-->    
+
             </div>      
     </div>
             
@@ -260,16 +287,6 @@ chartCPU = new Highcharts.StockChart({
 });
 
 </script>   
-
-<!-----------------------------------TEXT-------------------------------------------------->
-
-
-<!--inicio-->
-
-
-
-<!--fin-->    
-
 
 
 <!-----------------------------------estadistica-------------------------------------------------->
