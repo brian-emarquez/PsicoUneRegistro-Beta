@@ -20,7 +20,6 @@
         <link rel="stylesheet" href="assets/css/stylee.css">
         <link rel="stylesheet" href="assets/awesome/font-awesome.css">
         <link rel="stylesheet" href="assets/css/animate.css">
-        <link rel="stylesheet" href="assets/css/hover.css">
         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
 
@@ -115,7 +114,6 @@
                 <div clas="col-md-12"></div>
         
                 <nav class="navbar navbar-default sammacmedia">
-                <hr align="left" noshade="noshade" size="2" width="100%" />
                     <div class="container-fluid">
 
                         <div class="navbar-header" id="sams">
@@ -192,30 +190,8 @@
                      </div>
                 </div>
 
-
-                
-<!--inicio-->
-
-
-<body>
-    <div class="container col-lg-6 col-md-6">   
-        <div class="box">
-            <div class="icon"><i class="fa fa-search" aria-hidden="true">
-            </i></div>
-            <div class="content">
-                <h3>search</h3>
-                <p>hola ola holhola holaa hola hola hola hhola hola ola holaola hola</p>
-            </div>
-        </div>
-
-
-    </div>
-</body>
-
-
-<!--fin-->    
-
-            </div>      
+            </div>  
+             
     </div>
             
 <!-----------------------------------estadistica-------------------------------------------------->
@@ -293,8 +269,9 @@ chartCPU = new Highcharts.StockChart({
 
             <div class="line" ></div>
             <footer>
-                <p class="text-center"> Psicoune &copy;<?php echo date("Y ");?> 
-            </p>
+                <p class="text-center"> Psicoune &copy;<?php echo date("Y ");?> <i class="fa fa-map-marker " aria-hidden="true"></i> - CALLE FRANCISCO MOSTAJO 204 - YANAHUARA, Arequipa-Perú </p>
+                <p class="text-center"> <i class="fa fa-phone" aria-hidden="true"> (054) +51 958 336 625 - 950 319 245</i> <i class="fa fa-envelope" aria-hidden="true"></i> cursospsicoune@gmail.com </p>
+                           
             </footer>
             
             </div>
@@ -326,6 +303,15 @@ chartCPU = new Highcharts.StockChart({
              </a>
         </li>
     </li>
+
+    <div class="footer-social ul-li" >
+									<h2 class="widget-title">Redes sociales</h2>
+									<ul class="social-network">
+										<li><a href="https://www.facebook.com/psicouneorg/" ><i class="fa fa-facebook-official" style="color:white"></i></a></li>
+										<li><a href="https://twitter.com/psicoune?lang=es" bis_skin_checked="1"><i class="fab fa-twitter" style="color: rgb(52, 221, 243);"></i></a></li>
+										<li><a href="https://www.instagram.com/psicoune/" bis_skin_checked="1"><i style="color: rgb(168, 15, 122);" class="fab fa-instagram"></i></a></li>
+										<li><a href="https://www.psicoune.org/social/whatsapp" bis_skin_checked="1"><i style="color: rgb(17, 206, 17);" class="fab fa-whatsapp"></i></a></li>
+									</ul>
 
     </li>
     </ul>

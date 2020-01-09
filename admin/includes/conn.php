@@ -1,3 +1,3 @@
 <?php
-$mysqli =new mysqli('localhost','briandb','','rpo');
+$mysqli =new mysqli('localhost','briandb','briandb','rpo');
 ?>
