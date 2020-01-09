@@ -1,0 +1,110 @@
+/*body
+{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: #e91e63;
+}*/
+
+.efect
+{
+    /*position: absolute;*/
+    /*top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);*/
+    /*margin: 0;
+    padding: 20px 0;*/
+    /*background: #fff;*/
+    display: flex;
+    /*border-radius: 10px;*/
+    /*box-shadow: 0 10px 30px rgba(0,0,0,.3);*/
+    justify-content:center
+}
+
+.efect li 
+{
+    list-style: none;
+    text-align: center;
+    display: block;
+    border-right: 1px solid rgb(0,0,0,0.2);
+
+}
+
+.efect li:last-child
+{
+    border-right: none;
+}
+
+.efect li a
+{
+    text-decoration: none;
+    padding: 0 50px;
+    display: block;
+}
+
+.efect li a .icon
+{
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    overflow: hidden;
+    margin: 0 auto 10px;
+}
+
+.efect li a .icon .fa
+{
+    width: 100%;
+    height: 100%;
+    line-height: 40px;
+    font-size: 20px;
+    transition: 0.5s;
+    color: #000;
+}
+
+.efect li a:hover .icon .fa:last-child
+{
+    color: #B2AFAF;
+}
+
+
+.efect li a:hover .icon .fa
+{
+    transform: translateY(-100%);
+}
+
+.efect li a .name
+{
+    position: relative;
+    height: 20px;
+    width: 100%;
+    display: block;
+    overflow: hidden;
+}
+
+.efect li a .name span
+{
+    display: block;
+    position: relative;
+    color: #000;
+    font-size: 18px;
+    line-height: 20px;
+    transition: 0.5s;
+    
+
+}
+
+.efect li a .name span:before
+{
+    content: attr(data-text);
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #B2AFAF;
+}
+
+.efect li a:hover .name span
+{
+    transform: translateY(20px)
+}
