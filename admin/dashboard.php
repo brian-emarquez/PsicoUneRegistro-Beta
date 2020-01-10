@@ -21,7 +21,7 @@
         <link rel="stylesheet" href="assets/awesome/font-awesome.css">
         <link rel="stylesheet" href="assets/css/animate.css">
         <link rel="stylesheet" href="assets/css/animate.css">
-        <link rel="stylesheet" href="assets/css/barra.css">
+        <link rel="stylesheet" href="assets/css/barra2.css">
         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
 
@@ -273,74 +273,57 @@ chartCPU = new Highcharts.StockChart({
 
         <div class="efect">
             <li >
-                <a href="#" >
+                <a href="https://www.facebook.com/psicouneorg/">
                     <div class="icon" >  
-                            <i class="fa fa-home" aria-hidden="true"></i>
-                            <i class="fa fa-home" aria-hidden="true"></i>
-
+                        <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                        <i class="fa fa-facebook-official" aria-hidden="true"></i>
                      </div> 
-                    <div class="name"><span data-text="Home" >Home </span></div>            
+                    <div class="name"><span data-text="Facebook" >Facebook </span></div>            
                 </a>
             </li>
 
             <li>
-                            <a href="#">
-                            <div class="icon">
-                                <i class="fa fa-file-text-o" aria-hidden="true"></i>
-                                <i class="fa fa-file-text-o" aria-hidden="true"></i>
-                            </div>  
-                            <div class="name"><span data-text="About">About </span></div>            
-                            </a>
-                        </li>
+                <a href="https://twitter.com/psicoune?lang=es">
+                    <div class="icon">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                        <i class="fa fa-twitter" aria-hidden="true"></i>>
+                    </div>  
+                    <div class="name"><span data-text="Twitter">Twitter </span></div>            
+                </a>
+            </li>
 
-                        <li>
-                            <a href="#">
-                            <div class="icon">
-                                <i class="fa fa-cogs" aria-hidden="true"></i>
-                                <i class="fa fa-cogs" aria-hidden="true"></i>
-                            </div>  
-                            <div class="name"><span data-text="Services">Services </span></div>            
-                            </a>
-                        </li>
+            <li>
+                <a href="https://www.instagram.com/psicoune/">
+                    <div class="icon">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                    </div>  
+                    <div class="name"><span data-text="instagram">instagram</span></div>            
+                </a>
+            </li>
 
-                      
-
-                        <li>
-                            <a href="#">
-                            <div class="icon">
-                                <i class="fa fa-envelope" aria-hidden="true"></i>
-                                <i class="fa fa-envelope" aria-hidden="true"></i>
-                            </div>  
-                            <div class="name"><span data-text="Contact">Contact</span></div>            
-                            </a>
-                        </li>
-                    </div>
+            <li>
+                <a href="https://www.psicoune.org/social/whatsapp">
+                    <div class="icon">
+                        <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                        <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                    </div>  
+                    <div class="name"><span data-text="Whatsapp">Whatsapp</span></div>            
+                </a>
+            </li>
+            </div>
                     
 
             <div class="line" ></div>
             <footer>
-                <p class="text-center"> Psicoune &copy;<?php echo date("Y ");?> <i class="fa fa-map-marker " aria-hidden="true"></i> - CALLE FRANCISCO MOSTAJO 204 - YANAHUARA, Arequipa-Perú </p>
-                <p class="text-center"> <i class="fa fa-phone" aria-hidden="true"> (054) +51 958 336 625 - 950 319 245</i> <i class="fa fa-envelope" aria-hidden="true"></i> cursospsicoune@gmail.com </p>
-                         
-
-
-                
-
-                
-                                    <!--<ul class="text-center">
-										<a href="https://www.facebook.com/psicouneorg/" ><i class="fa fa-facebook-official" ></i> Facebook</a>
-										<a href="https://twitter.com/psicoune?lang=es" ><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a>
-										<a href="https://www.instagram.com/psicoune/" ><i class="fa fa-instagram" aria-hidden="true"></i> instagram</a>
-										<a href="https://www.psicoune.org/social/whatsapp" ><i class="fa fa-whatsapp" aria-hidden="true"> whatsapp</i></a>
-									</ul>-->
-           
+                <p class="text-center"> Psicoune &copy;<?php echo date("Y ");?> <i class="fa fa-map-marker " aria-hidden="true"></i> - CALLE FRANCISCO MOSTAJO 204  - YANAHUARA, Arequipa - Perú </p>
+                <p class="text-center"> <i class="fa fa-phone" aria-hidden="true">  (054) +51 958 336 625 - 950 319 245 </i> <i class="fa fa-envelope " aria-hidden="true"></i> cursospsicoune@gmail.com </p>
             </footer>
             
             </div>
        
 
-
-<!--flex derecho-->
+<!---------------------------------------------------------------flex derecho-Iniciio------------------------------------------------------------------>
 <div id="barra">
 <div id="barra-lateral">
     <div id="logo-menu">
@@ -370,13 +353,10 @@ chartCPU = new Highcharts.StockChart({
     </div>
 </div>
 </div>
- <!--flex derecho-->
-
+ <!--------------------------------------------------------------flex derecho-Fin----------------------------------------------------------------->
 </div>
 
-
-
-        <!-- jQuery CDN -->
+<!-- jQuery CDN -->
          <script src="assets/js/jquery-1.10.2.js"></script>
          <!-- Bootstrap Js CDN -->
          <script src="assets/js/bootstrap.min.js"></script>

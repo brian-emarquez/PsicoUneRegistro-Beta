@@ -221,22 +221,15 @@
             </div>
                 </div>
                 <div class="line"></div>
-                <footer>
-            <p class="text-center">
-            Psicoune &copy;<?php echo date("Y ");?>          
-         </p>
-            
-            </p>
+            <footer>
+                <p class="text-center"> Psicoune &copy;<?php echo date("Y ");?> <i class="fa fa-map-marker " aria-hidden="true"></i> - CALLE FRANCISCO MOSTAJO 204  - YANAHUARA, Arequipa - Perú </p>
+                <p class="text-center"> <i class="fa fa-phone" aria-hidden="true">  (054) +51 958 336 625 - 950 319 245 </i> <i class="fa fa-envelope " aria-hidden="true"></i> cursospsicoune@gmail.com </p>
             </footer>
         </div>
+
  <!--flex derecho-->
-
-
-            
 <!--flex derecho-->
 
-     
-            
         </div>
 
          <script src="assets/js/jquery-1.10.2.js"></script>
