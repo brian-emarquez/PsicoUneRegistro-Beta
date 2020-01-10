@@ -21,7 +21,7 @@
         <link rel="stylesheet" href="assets/awesome/font-awesome.css">
         <link rel="stylesheet" href="assets/css/animate.css">
         <link rel="stylesheet" href="assets/css/animate.css">
-        <link rel="stylesheet" href="assets/css/barra2.css">
+        <link rel="stylesheet" href="assets/css/barra.css">
         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
 
@@ -114,7 +114,7 @@
             <div id="content">
              
                 <div clas="col-md-12"></div>
-        
+                   <!-- <img src="assets/image/rpo.jpeg" class="img-thumbnail">-->
                 <nav class="navbar navbar-default sammacmedia">
                     <div class="container-fluid">
 
@@ -138,7 +138,6 @@
                 <div class="line"></div>
                 <div class="row">
                          
-<!---------------------------------------inicio----------------------------------------->
                 <div class="col-lg-6 col-md-6 ">
                     <div class="panel panel sammac sammacmedia">
                     <a href="v_users.php">
@@ -157,7 +156,7 @@
                        
                     </div>
                 </div>
-<!---------------------------------------fin------------------------------------------->
+
                 <div class="col-lg-6 col-md-6">
                     <div class="panel panel strover sammacmedia">
                     <a href="v_issue.php">
@@ -189,88 +188,88 @@
                                     <div>Ajustes del Usuarios</div>
                                 </div>
                             </div>
+                        </div>
                      </div>
-                </div>
-
-            </div>  
-             
-    </div>
-  
-            
+                </div>  
+            </div>
+                           
+              
 <!-----------------------------------estadistica-Inicio-------------------------------------------------->
+    <?php
+        if($_SESSION['permission']==1 or $_SESSION['permission']==2 ){              
+    ?>
+<a href="#">
+    <?php
+    
+    require_once("RandomClass.php");
 
+    $rand = new RandomTable();
+    $rand->insertRandom();
+    $rawdata = $rand->getAllInfo();
 
-<meta charset="utf-8"> 
-<?php
-require_once("RandomClass.php");
-
-$rand = new RandomTable();
-$rand->insertRandom();
-$rawdata = $rand->getAllInfo();
-
-$valoresArray;
-$timeArray;for($i = 0 ;$i<count($rawdata);$i++){
-    $valoresArray[$i]= $rawdata[$i][1];
-    $time= $rawdata[$i][2];
-    $date = new DateTime($time);
-    $timeArray[$i] = $date->getTimestamp()*1000;
-}
-
-?>
-<div id="contenedor"></div>
-
-<script src="https://code.jquery.com/jquery.js"></script>
-<script src="http://code.highcharts.com/stock/highstock.js"></script>
-<script src="http://code.highcharts.com/modules/exporting.js"></script>
-<script>
-
-chartCPU = new Highcharts.StockChart({
-    chart: {
-        renderTo: 'contenedor'
-      
-        
-    },
-    rangeSelector : {
-        enabled: false
-    },
-    title: {
-        text: 'Gráfica'
-    },
-    xAxis: {
-        type: 'datetime'
-        
-    },
-    yAxis: {
-        minPadding: 0.2,
-        maxPadding: 0.2,
-        title: {
-            text: 'Valores',
-            margin: 10
-        }
-    },
-    series: [{
-        name: 'Valor',
-        data: (function() {
-                var data = [];
-                <?php
-                    for($i = 0 ;$i<count($rawdata);$i++){
-                ?>
-                data.push([<?php echo $timeArray[$i];?>,<?php echo $valoresArray[$i];?>]);
-                <?php } ?>
-                return data;
-            })()
-    }],
-    credits: {
-            enabled: false
+    $valoresArray;
+    $timeArray;for($i = 0 ;$i<count($rawdata);$i++){
+        $valoresArray[$i]= $rawdata[$i][1];
+        $time= $rawdata[$i][2];
+        $date = new DateTime($time);
+        $timeArray[$i] = $date->getTimestamp()*1000;
     }
-});
 
-</script>   
+    ?>
+    <div id="contenedor"></div>
 
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="http://code.highcharts.com/stock/highstock.js"></script>
+    <script src="http://code.highcharts.com/modules/exporting.js"></script>
+    <script>
+
+    chartCPU = new Highcharts.StockChart({
+        chart: {
+            renderTo: 'contenedor'
+        
+            
+        },
+        rangeSelector : {
+            enabled: false
+        },
+        title: {
+            text: 'Monitor de Actvidades'
+        },
+
+        xAxis: {
+            type: 'datetime'
+            
+        },
+        yAxis: {
+            minPadding: 0.2,
+            maxPadding: 0.2,
+            title: {
+                text: 'Valores',
+                margin: 10
+            }
+        },
+        series: [{
+            name: 'Valor',
+            data: (function() {
+                    var data = [];
+                    <?php
+                        for($i = 0 ;$i<count($rawdata);$i++){
+                    ?>
+                    data.push([<?php echo $timeArray[$i];?>,<?php echo $valoresArray[$i];?>]);
+                    <?php } ?>
+                    return data;
+                })()
+        }],
+        credits: {
+                enabled: false
+        }
+    });
+
+    </script>   
+     <?php }?>
 
 <!-----------------------------------estadistica-Fin-------------------------------------------------->
 <div class="line" ></div>
-
         <div class="efect">
             <li >
                 <a href="https://www.facebook.com/psicouneorg/">
@@ -319,8 +318,7 @@ chartCPU = new Highcharts.StockChart({
                 <p class="text-center"> Psicoune &copy;<?php echo date("Y ");?> <i class="fa fa-map-marker " aria-hidden="true"></i> - CALLE FRANCISCO MOSTAJO 204  - YANAHUARA, Arequipa - Perú </p>
                 <p class="text-center"> <i class="fa fa-phone" aria-hidden="true">  (054) +51 958 336 625 - 950 319 245 </i> <i class="fa fa-envelope " aria-hidden="true"></i> cursospsicoune@gmail.com </p>
             </footer>
-            
-            </div>
+        </div>
        
 
 <!---------------------------------------------------------------flex derecho-Iniciio------------------------------------------------------------------>

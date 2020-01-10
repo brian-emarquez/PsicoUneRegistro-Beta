@@ -1,23 +1,7 @@
-/*body
-{
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    background: #e91e63;
-}*/
-
 .efect
 {
-    /*position: absolute;*/
-    /*top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);*/
-    /*margin: 0;
-    padding: 20px 0;*/
-    /*background: #fff;*/
+   
     display: flex;
-    /*border-radius: 10px;*/
-    /*box-shadow: 0 10px 30px rgba(0,0,0,.3);*/
     justify-content:center
 }
 
