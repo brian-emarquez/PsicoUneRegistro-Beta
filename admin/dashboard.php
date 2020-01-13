@@ -321,37 +321,7 @@
         </div>
        
 
-<!---------------------------------------------------------------flex derecho-Iniciio------------------------------------------------------------------>
-<div id="barra">
-<div id="barra-lateral">
-    <div id="logo-menu">
-    </div>
 
-    <ul class="list-unstyled components">
-    <li class >
-                         
-    <li>
-         <li >
-             <a href="https://www.psicoune.org">
-             &nbsp;&nbsp;<i class="fa fa-external-link" style="color:#FFF">&nbsp; Psicoune</i>
-            
-        </li>
-    </li>
-    <BR>
-    
-    </li>
-         <li>
-            <a href="logout.php">
-            &nbsp;&nbsp;<i class="fa fa-sign-out" aria-hidden="true" style="color:#FFF">&nbsp; Cerrar Sesion</i>
-             </a>
-        </li>
-    </li>                    
-    </li>
-    </ul>
-    </div>
-</div>
-</div>
- <!--------------------------------------------------------------flex derecho-Fin----------------------------------------------------------------->
 </div>
 
 <!-- jQuery CDN -->
