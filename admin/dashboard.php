@@ -198,74 +198,9 @@
     <?php
         if($_SESSION['permission']==1 or $_SESSION['permission']==2 ){              
     ?>
-<a href="#">
-    <?php
+
     
-    require_once("RandomClass.php");
 
-    $rand = new RandomTable();
-    $rand->insertRandom();
-    $rawdata = $rand->getAllInfo();
-
-    $valoresArray;
-    $timeArray;for($i = 0 ;$i<count($rawdata);$i++){
-        $valoresArray[$i]= $rawdata[$i][1];
-        $time= $rawdata[$i][2];
-        $date = new DateTime($time);
-        $timeArray[$i] = $date->getTimestamp()*1000;
-    }
-
-    ?>
-    <div id="contenedor"></div>
-
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="http://code.highcharts.com/stock/highstock.js"></script>
-    <script src="http://code.highcharts.com/modules/exporting.js"></script>
-    <script>
-
-    chartCPU = new Highcharts.StockChart({
-        chart: {
-            renderTo: 'contenedor'
-        
-            
-        },
-        rangeSelector : {
-            enabled: false
-        },
-        title: {
-            text: 'Monitor de Actvidades'
-        },
-
-        xAxis: {
-            type: 'datetime'
-            
-        },
-        yAxis: {
-            minPadding: 0.2,
-            maxPadding: 0.2,
-            title: {
-                text: 'Valores',
-                margin: 10
-            }
-        },
-        series: [{
-            name: 'Valor',
-            data: (function() {
-                    var data = [];
-                    <?php
-                        for($i = 0 ;$i<count($rawdata);$i++){
-                    ?>
-                    data.push([<?php echo $timeArray[$i];?>,<?php echo $valoresArray[$i];?>]);
-                    <?php } ?>
-                    return data;
-                })()
-        }],
-        credits: {
-                enabled: false
-        }
-    });
-
-    </script>   
      <?php }?>
 
 <!-----------------------------------estadistica-Fin-------------------------------------------------->
