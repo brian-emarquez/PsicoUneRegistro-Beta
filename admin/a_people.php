@@ -154,7 +154,7 @@
                             $joined = date(" d M Y ");
                             $employee_id = rand(9999999,1000000);    
                             $tmp = rand(1,9999);
-                            $phone = '263'.$phon;   
+                            $phone = '54'.$phon;   
                             $file = $_FILES['file'];
                             $fileName =$file['name'];
                             $fileTmpName = $file['tmp_name'];

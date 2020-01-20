@@ -2,8 +2,12 @@
 
 <?php require_once('includes/session.php');
        require_once('includes/conn.php');
-       require_once('check.php');    
+       require_once('includes/db.php');
+       require_once('check.php'); 
+
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -22,10 +26,7 @@
         <link rel="stylesheet" href="assets/css/animate.css">
         <link rel="stylesheet" href="assets/css/animate.css">
         <link rel="stylesheet" href="assets/css/barra.css">
-        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
-
-        
     </head>
     
     <body>
@@ -176,7 +177,7 @@
                 </div>
 
                 <div class="col-lg-6 col-md-6" >
-                <div class="panel panel strover sammacmedia" style="background-color:#90A3BD" >
+                <div class="panel panel strover sammacmedia" style="background-color:#0A63A5" >
                     <a href="settings.php">
                         <div class="panel-heading" >
                             <div class="row">
@@ -194,16 +195,60 @@
             </div>
                            
               
-<!-----------------------------------estadistica-Inicio-------------------------------------------------->
-    <?php
-        if($_SESSION['permission']==1 or $_SESSION['permission']==2 ){              
-    ?>
+<!-----------------------------------estadistica-Inicio--------------------------------------------->
+  
+  <div class="line" ></div>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+  
+
+   <div class="container" style="width:900px;">
+   <h4 align="center">Monitor de Eventos - Nombre </h4>   
+   <br/><br/>
+   <div id="chart-bar"></div>
+
+
+    <script>
+        Morris.Bar({
+        element : 'chart-bar',
+        data:[<?php echo $chart_data; ?>],
+        xkey:'name',
+        ykeys:['edad'], 
+        labels:['edad'], //mensage
+        hideHover:'auto',
+        stacked:true,
+        });
+    </script>
+
+    <div class="line" ></div>
+    <div class="container" style="width:900px;">
+    <h4 align="center">Monitor de Eventos - Tiempo </h4>   
+    <br/><br/>
+    <div id="chart-line"></div>
+
+
+    <script>
+        Morris.Line({
+        element : 'chart-line',
+        data:[<?php echo $chart_data; ?>],
+        xkey:'year',
+        ykeys:['edad'], 
+        labels:['edad'], //mensage
+        hideHover:'auto',
+        stacked:true,
+        });
+    </script>
 
     
 
-     <?php }?>
+ 
+   
+<!-----------------------------------estadistica-Fin----------------------------------------------->
 
-<!-----------------------------------estadistica-Fin-------------------------------------------------->
+<!-----------------------------------Slide-Inicio-------------------------------------------------->
+
 <div class="line" ></div>
         <div class="efect">
             <li >
@@ -246,17 +291,22 @@
                 </a>
             </li>
             </div>
-                    
 
+<!-----------------------------------Slide-Fin-------------------------------------------------->
+    
             <div class="line" ></div>
             <footer>
                 <p class="text-center"> Psicoune &copy;<?php echo date("Y ");?> <i class="fa fa-map-marker " aria-hidden="true"></i> - CALLE FRANCISCO MOSTAJO 204  - YANAHUARA, Arequipa - Perú </p>
                 <p class="text-center"> <i class="fa fa-phone" aria-hidden="true">  (054) +51 958 336 625 - 950 319 245 </i> <i class="fa fa-envelope " aria-hidden="true"></i> cursospsicoune@gmail.com </p>
             </footer>
         </div>
+
+
+        <!-- Contador de visitas -->
+<center><a href="http://www.websmultimedia.com/contador-de-visitas-gratis" title="Contador De Visitas Gratis">
+<img style="border: 0px solid; display: inline;" alt="contador de visitas" src="http://www.websmultimedia.com/contador-de-visitas.php?id=276615"></a><br><a href='http://www.websmultimedia.com/contador-de-visitas-gratis'></a><br><a href='http://boxindian.com/'></a></center>
+<!-- Fin Contador de visitas -->
        
-
-
 </div>
 
 <!-- jQuery CDN -->
