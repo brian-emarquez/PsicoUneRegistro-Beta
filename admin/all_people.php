@@ -78,6 +78,21 @@
                     </li>
                     <?php }?>
                              <?php
+
+                    if($_SESSION['permission']==1 or $_SESSION['permission']==2 ){
+                                                                                                        
+                                                                                                    
+                        ?>
+                        <li>
+                            <a href="maps.php">
+                            <i class="fa fa-map-marker"></i>
+                                Geolocalizacion
+
+                            </a>
+                        </li>
+                        <?php }?>
+                                <?php
+
                     if($_SESSION['permission']==1 or $_SESSION['permission']==2 ){
                         
                     
@@ -125,7 +140,8 @@
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav navbar-right  makotasamuel">
                                 <li><a href="#"><?php require_once('includes/name.php');?></a></li>
-                                <!--<li ><a href="logout.php"><i class="fa fa-power-off"> Cerrar sesión-->
+                                <li ><a href="logout.php"><i class="fa fa-power-off"> Cerrar sesión</i></a></li> 
+                                </i></a></li>
            
                             </ul>
                         </div>

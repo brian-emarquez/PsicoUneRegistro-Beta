@@ -85,6 +85,22 @@
                     </li>
                     <?php }?>
                              <?php
+
+                    if($_SESSION['permission']==1 or $_SESSION['permission']==2 ){
+                                            
+                                        
+                        ?>
+                        <li>
+                            <a href="maps.php">
+                            <i class="fa fa-map-marker"></i>
+                                Geolocalizacion
+
+                            </a>
+                        </li>
+                        <?php }?>
+                                <?php
+
+
                     if($_SESSION['permission']==1){
                     ?>
                     <li>
@@ -205,7 +221,7 @@
   
 
    <div class="container" style="width:900px;">
-   <h4 align="center">Monitor de Eventos - Nombre </h4>   
+   <h5 align="center">Monitor de Eventos </h5>   
    <br/><br/>
    <div id="chart-bar"></div>
 
@@ -224,7 +240,7 @@
 
     <div class="line" ></div>
     <div class="container" style="width:900px;">
-    <h4 align="center">Monitor de Eventos - Tiempo </h4>   
+    <h4 align="center">Monitor de Eventos </h4>   
     <br/><br/>
     <div id="chart-line"></div>
 
@@ -254,8 +270,8 @@
             <li >
                 <a href="https://www.facebook.com/psicouneorg/">
                     <div class="icon" >  
-                        <i class="fa fa-facebook-official" aria-hidden="true"></i>
-                        <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                         <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                         <i class="fa fa-facebook-official" aria-hidden="true"></i>
                      </div> 
                     <div class="name"><span data-text="Facebook" >Facebook </span></div>            
                 </a>

@@ -1,4 +1,4 @@
-<!-- invest.php -->
+<!-- a_people.php -->
 
 <?php require_once('includes/session.php');
       require_once('includes/conn.php');
@@ -10,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <title>Reportar Problemas</title>
+        <title>Agregar Persona</title>
 
          <!-- Bootstrap CSS CDN -->
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -18,16 +18,17 @@
         <link rel="stylesheet" href="assets/css/style.css">
         <link rel="stylesheet" href="assets/awesome/font-awesome.css">
         <link rel="stylesheet" href="assets/css/animate.css">
+        <script type="text/javascript" src="../js/googlemaps.js"></script>
+
     </head>
     <body>
 
 
-
-        <div class="wrapper">
+    <div class="wrapper">
             <!-- Sidebar Holder -->
             <nav id="sidebar" class="sammacmedia">
                 <div class="sidebar-header">
-                    <h3>REPORTAR PROBLEMAS</h3>
+                    <h3>AGREGAR PERSONA</h3>
                     <strong>RPO</strong>
                 </div>
 
@@ -43,10 +44,10 @@
                         
                     
                     ?>
-                    <li  >
+                    <li>
                         <a href="a_people.php">
                             <i class="fa fa-plus"></i>
-                            Agregar Personas
+                           Agregar Persona
 
                         </a>
                       
@@ -55,11 +56,11 @@
                     <li>
                         <a href="all_people.php">
                             <i class="fa fa-table"></i>
-                           Listado de Personas
+                            Listado de Personas
 
                         </a>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="invest.php">
                             <i class="fa fa-link"></i>
                             Informe de Problemas
@@ -81,12 +82,11 @@
                     <?php }?>
                              <?php
 
-
                     if($_SESSION['permission']==1 or $_SESSION['permission']==2 ){
-                                                                                    
-                                                                                
+                                                                
+                                                            
                         ?>
-                        <li>
+                        <li class="active">
                             <a href="maps.php">
                             <i class="fa fa-map-marker"></i>
                                 Geolocalizacion
@@ -119,6 +119,7 @@
                         <a href="settings.php">
                             <i class="fa fa-cog"></i>
                             Ajustes
+
                         </a>
                     </li>
                 </ul>
@@ -128,12 +129,11 @@
             <div id="content">
              
                 <div clas="col-md-12">
-                     <!-- AGREGAR IMAGEN -->
-                    <!-- <img src="assets/image/ssm.jpg" class="img-thumbnail"> -->
-                    </div>
+                    <!--<img src="assets/image/ssm.jpg" class="img-thumbnail"> -->
+                </div>
          
                 
-                <nav class="navbar navbar-default sammacmedia">
+               <nav class="navbar navbar-default sammacmedia">
                     <div class="container-fluid">
 
                         <div class="navbar-header" id="sams">
@@ -146,111 +146,164 @@
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav navbar-right  makotasamuel">
                                 <li><a href="#"><?php require_once('includes/name.php');?></a></li>
-                                <li ><a href="logout.php"><i class="fa fa-power-off"> Cerrar sesión</i></a></li>
-                                
+                                <li ><a href="logout.php"><i class="fa fa-power-off"> Cerrar sesión</i></a></li> 
+                                </i></a></li>
            
                             </ul>
                         </div>
                     </div>
                 </nav>
 
-                <div class="line"></div>
+<!--------------------------------------------------------------Init Map-------------------------------------------------------------------->
 
-                            <?php
-                            if(isset($mysqli,$_POST['submit'])){
-                            $people_id = mysqli_real_escape_string($mysqli,$_POST['people_id']);
-                            $severity = mysqli_real_escape_string($mysqli,$_POST['severity']);
-                            $notes = mysqli_real_escape_string($mysqli,$_POST['notes']);
-                            $as = rand(1000,9999);     
-                            $case_num = date("YmdHis").'.'.$as;
-      
-                  
-                            $sql = "INSERT INTO cases(people_id,severity,case_num,notes)VALUES('$people_id','$severity','$case_num','$notes')";
-                            $results = mysqli_query($mysqli,$sql);
+        
+    <style>
+        #fondo{
+            background-color: #D7D2D2;
+        }
 
-                        if($results==1){
-                              ?>
-                        <div class="alert alert-success strover animated bounce" id="sams1">
-                        <a href="#" class="close" data-dismiss="alert">&times;</a>
-                        <strong> Exitosamente! </strong><?php echo'Informe agregado con éxito';?></div>
-                        <?php
+        #menu{
+            background-color: #A09D9C;
+        }
 
-                          }else{
-                                ?>
-                        <div class="alert alert-danger samuel animated shake" id="sams1">
-                        <a href="#" class="close" data-dismiss="alert">&times;</a>
-                        <strong> Advertencia! </strong><?php echo'Huy! Algo salió mal';?></div>
-            
-                        <?php    
-                          }      
-                
+        #menu ul{
+            list-style: none;
+            margin: 0;
+            padding: 20px 30px;
+        }
+
+        #menu li{
+            display: inline;
+            margin: 0;
+        }
+
+        #menu li a{
+            color: white;
+            padding: 20px 30px;
+            text-decoration: none;
+        }
+
+        #menu li a:hover{
+            background-color: cornflowerblue;
+            color: white;
+        }
+
+        @media screen and (max-width: 747px){
+            #menu ul{
+                padding: 0;
             }
-                
-                ?>
-		<div class="panel panel-default sammacmedia">
-            <div class="panel-heading">Informe de Problemas</div>
-        <div class="panel-body">
-            <form method="post" action="invest.php">
-        <div class="row form-group">
-          <div class="col-lg-6">
-            <label>Seleccione el Id de la persona</label>
-             <?php
-                       
-                    $query1 = "SELECT * FROM `people`";
-                    $result1 = mysqli_query($mysqli, $query1);
-                    ?>
-                    <select class="form-control" name="people_id">
-                    <?php while($row1 = mysqli_fetch_array($result1)):;?>
-                        <option><?php echo $row1['people_id'];?></option>
-                        <?php endwhile;?>
-                       
-                       </select>
-            </div>  
-            <div class="col-lg-6">
-            <label>Gravedad de caso</label>
-                <select class="form-control" name="severity">
-                <option>Normal</option>
-                <option>Crítico</option>  
-                <option>Peligro</option>    
-                </select>
-            </div>
-           </div>
-                <div class="row form-group">
-          <div class="col-lg-12">
-              <textarea class="form-control" id="editor" name="notes"></textarea>
-            </div>  
-             
-           </div>
-                
-                <div class="row">
-                <div class="col-md-6">
-                  <button type="submit" name="submit" class="btn btn-suc btn-block"><span class="fa fa-plus"></span> Agregar</button>  
-                </div>
-                     <div class="col-md-6">
-                  <button type="submit" class="btn btn-dan btn-block"><span class="fa fa-times"></span> Cancelar</button>  
-                </div>
-                </div>
-            </form>
+            #menu ul li{
+                margin-right: -3px;
+                display: inline-block;
+                text-align: center;
+                width: 33%;
+            }
 
+            #menu li a{
+                display: list-item;
+            }
+        }
+
+        @media screen and (max-width: 480px){
+            #menu ul li{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<div id="fondo">
+    <div id="menu">
+        <ul>
+            <li><a href="#">Arequipa</a></li>
+            <li><a href="#">Juliaca</a></li>
+            <li><a href="#">Tacna</a></li>
+        </ul>
+    </div>
+    
+
+  
+    <style type="text/css">
+		.container {
+			height: 400px;
+		}
+		#map {
+			width: 100%;
+			height: 100%;
+			border: 1px solid red;
+		}
+		#data, #allData {
+			display: none;
+		}
+	</style>
+
+
+	<div class="container">
+		<center><h5>Sedes Psicoune</h5></center>
+		<?php 
+			require 'ubicacion.php';
+			$edu = new ubicacion;
+			$coll = $edu->getCollegesBlankLatLng();
+			$coll = json_encode($coll, true);
+			echo '<div id="data">' . $coll . '</div>';
+
+			$allData = $edu->getAllColleges();
+			$allData = json_encode($allData, true);
+			echo '<div id="allData">' . $allData . '</div>';			
+		 ?>
+		<div id="map"></div>
+	</div>
+
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-dFHYjTqEVLndbN2gdvXsx09jfJHmNc8&callback=loadMap">
+</script>
+<br>
+
+
+
+	<div class="container">
+		<center><h5>Sedes Psicoune</h5></center>
+		<?php 
+			require 'ubicacion.php';
+			$edu = new ubicacion;
+			$coll = $edu->getCollegesBlankLatLng();
+			$coll = json_encode($coll, true);
+			echo '<div id="data">' . $coll . '</div>';
+
+			$allData = $edu->getAllColleges();
+			$allData = json_encode($allData, true);
+			echo '<div id="allData">' . $allData . '</div>';			
+		 ?>
+		<div id="map"></div>
+	</div>
+
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-dFHYjTqEVLndbN2gdvXsx09jfJHmNc8&callback=loadMap">
+</script>
+<br>
+ 
+
+
+
+
+  <!------------------------------------------------------------Fin Map----------------------------------------------------------------->
+
+            
+            <div class="line"></div>
+            
             </div>
-                </div>
-                <div class="line"></div>
-             <footer>
+                 <footer>
                 <p class="text-center"> Psicoune &copy;<?php echo date("Y ");?> <i class="fa fa-map-marker " aria-hidden="true"></i> - CALLE FRANCISCO MOSTAJO 204  - YANAHUARA, Arequipa - Perú </p>
                 <p class="text-center"> <i class="fa fa-phone" aria-hidden="true">  (054) +51 958 336 625 - 950 319 245 </i> <i class="fa fa-envelope " aria-hidden="true"></i> cursospsicoune@gmail.com </p>
-            </footer>
+                </footer>
             </div>
-
-    <!--flex derecho-->
-    <!--flex derecho-->
-
             
         </div>
+
         <!-- jQuery CDN -->
          <script src="assets/js/jquery-1.10.2.js"></script>
          <!-- Bootstrap Js CDN -->
          <script src="assets/js/bootstrap.min.js"></script>
-         <script src="vendors/ckeditor/sammacmedia.js"></script>
 
          <script type="text/javascript">
              $(document).ready(function () {
@@ -273,14 +326,6 @@
             }, 5000);
  
         });
-              ClassicEditor
-                .create( document.querySelector( '#editor' ) )
-                .then( editor => {
-                console.log( editor );
-		} )
-                .catch( error => {
-                console.error( error );
-		} );
     </script>
     </body>
 </html>
