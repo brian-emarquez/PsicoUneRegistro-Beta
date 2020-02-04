@@ -4,7 +4,7 @@ var geocoder;
 function loadMap() {
 	var psicoune = {lat: -16.39139392, lng: -71.54574215};
     map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 7,
+      zoom: 6,
       center: psicoune
     });
 

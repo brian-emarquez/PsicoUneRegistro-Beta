@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="assets/awesome/font-awesome.css">
         <link rel="stylesheet" href="assets/css/animate.css">
         <script type="text/javascript" src="../js/googlemaps.js"></script>
+        <link rel="stylesheet" href="assets/css/modal-geo.css">
 
     </head>
     <body>
@@ -154,7 +155,7 @@
                     </div>
                 </nav>
 
-<!--------------------------------------------------------------Init Map-------------------------------------------------------------------->
+<!--------------------------------------------------------------Init modal-------------------------------------------------------------------->
 
         
     <style>
@@ -211,17 +212,153 @@
         }
     </style>
 </head>
-
+	
 <div id="fondo">
     <div id="menu">
         <ul>
-            <li><a href="#">Arequipa</a></li>
-            <li><a href="#">Juliaca</a></li>
-            <li><a href="#">Tacna</a></li>
+            <li><a href="#" id="arequipa">Arequipa</a></li>
+            <li><a href="#" id="tacna">Tacna</a></li>
+            <li><a href="#" id="juliaca">Juliaca</a></li>
+            <li><a href="#" id="huancayo">Huancayo</a></li>
+
         </ul>
     </div>
-    
 
+    
+    <div>
+    <div id="miModal" class="modal">
+		<div class="flex" id="flex">
+			<div class="contenido-modal">
+				<div class="modal-header flex">
+					<h3>Arequipa </h3>
+					<span class="close" id="close">&times;</span>
+				</div>
+				<div class="modal-body">
+					<p> Dirección: Francisco Mostajo 204, Yanahuara 04013, Teléfono: (054) 626963,  Yanahuara, psicoune.org</p>
+                    <div id="container_aq">
+                        <style>
+                        #container_aq{
+                            background: url(../images/modal/psicoune_aq.jpg);
+                            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+                            width: 300px;
+                            height: 300px;
+                            margin: 0 auto;
+                            transition: all 1s;
+                        }
+                        #container_aq:hover{
+                            border-radius: 44% 56% 87% 13% / 68% 86% 14% 32% ;
+                        }
+                        </style>
+                    </div>
+                </div>
+				<div class="footer">
+                    <center><h5><a href="https://www.facebook.com/psicouneorg/" >Sede Arequipa</a></h5></center>
+                </div>                
+            </div> 
+		</div>
+    </div>
+  
+    <div id="miModal2" class="modal2">
+		<div class="flex2" id="flex2">
+			<div class="contenido-modal2">
+				<div class="modal-header2 flex2">
+					<h3>Tacna</h3>
+					<span class="close2" id="close2">&times;</span>
+				</div>
+				<div class="modal-body2">
+					<p>  Dirección: Pje Vigil , 178 Segundo Piso, Teléfono: 993768338 - 958336625,  Tacna, psicoune.org </p> 
+                    <div id="container_ta">
+                        <style>
+                        #container_ta{
+                            background: url(../images/modal/psicoune_ta.jpg);
+                            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+                            width: 300px;
+                            height: 300px;
+                            margin: 0 auto;
+                            transition: all 1s;
+                        }
+                        #container_ta:hover{
+                            border-radius: 44% 56% 87% 13% / 68% 86% 14% 32% ;
+                        }
+                        </style>
+                    </div>
+                </div>
+				<div class="footer2">
+                <center><h5><a href="https://www.facebook.com/TACNA-Psicoune-559979351127412" >Sede Arequipa</a></h5></center>
+                </div>                
+            </div> 
+		</div>
+    </div>
+
+    <div id="miModal3" class="modal3">
+		<div class="flex3" id="flex3">
+			<div class="contenido-modal3">
+				<div class="modal-header3 flex3" >
+					<h3>Juliaca</h3>
+					<span class="close3" id="close3">&times;</span>
+				</div>
+				<div class="modal-body3">
+					<p> Dirección: Jr. Jorge Chávez N° 277, Juliaca, psicoune.org</p> 
+                    <div id="container_ju">
+                        <style>
+                        #container_ju{
+                            background: url(../images/modal/psicoune_ju.jpg);
+                            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+                            width: 300px;
+                            height: 300px;
+                            margin: 0 auto;
+                            transition: all 1s;
+                        }
+                        #container_ju:hover{
+                            border-radius: 44% 56% 87% 13% / 68% 86% 14% 32% ;
+                        }
+                        </style>
+                    </div>
+                </div>
+				<div class="footer3">
+                <center><h5><a href="https://www.facebook.com/Juliaca-Psicoune-606263009819295" >Sede Arequipa</a></h5></center>
+                </div>                
+            </div> 
+		</div>
+    </div>
+
+    <div id="miModal4" class="modal4">
+		<div class="flex4" id="flex4">
+			<div class="contenido-modal4">
+				<div class="modal-header3 flex4" >
+					<h3>Huancayo</h3>
+					<span class="close4" id="close4">&times;</span>
+				</div>
+				<div class="modal-body4">
+					<p> Dirección: Psj. Santa Rosa 276, Huancayo, psicoune.org</p> 
+                    <div id="container_hu">
+                        <style>
+                        #container_hu{
+                            background: url(../images/modal/psicoune_hu.jpg);
+                            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+                            width: 300px;
+                            height: 300px;
+                            margin: 0 auto;
+                            transition: all 1s;
+                        }
+                        #container_hu:hover{
+                            border-radius: 44% 56% 87% 13% / 68% 86% 14% 32% ;
+                        }
+                        </style>
+                    </div>
+                </div>
+				<div class="footer4">
+                <center><h5><a href="https://www.facebook.com/Huancayo-Psicoune-811082085957055/?__tn__=%2Cd%2CP-R&eid=ARA-u6E6N26UMAmZ_Mg-IpTclAerzUEWS2h71sjmIqGkSLL00g1x9n-Xev_8P5fD8Sa0cu78yFyT4jDW" >Sede Arequipa</a></h5></center>
+                </div>                
+            </div> 
+		</div>
+    </div>
+    
+    <script src="../js/modal-geo.js"></script>
+    </div>
+  
+  <!-------------------------------------------------------------fin modal-------------------------------------------------------------------->
+  <!--------------------------------------------------------------Init Map-------------------------------------------------------------------->
   
     <style type="text/css">
 		.container {
@@ -258,31 +395,6 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-dFHYjTqEVLndbN2gdvXsx09jfJHmNc8&callback=loadMap">
 </script>
 <br>
-
-
-
-	<div class="container">
-		<center><h5>Sedes Psicoune</h5></center>
-		<?php 
-			require 'ubicacion.php';
-			$edu = new ubicacion;
-			$coll = $edu->getCollegesBlankLatLng();
-			$coll = json_encode($coll, true);
-			echo '<div id="data">' . $coll . '</div>';
-
-			$allData = $edu->getAllColleges();
-			$allData = json_encode($allData, true);
-			echo '<div id="allData">' . $allData . '</div>';			
-		 ?>
-		<div id="map"></div>
-	</div>
-
-<script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-dFHYjTqEVLndbN2gdvXsx09jfJHmNc8&callback=loadMap">
-</script>
-<br>
- 
-
 
 
 
