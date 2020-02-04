@@ -1,4 +1,4 @@
-<!-- a_people.php -->
+<!-- maps.php -->
 
 <?php require_once('includes/session.php');
       require_once('includes/conn.php');
@@ -19,7 +19,7 @@
         <link rel="stylesheet" href="assets/awesome/font-awesome.css">
         <link rel="stylesheet" href="assets/css/animate.css">
         <script type="text/javascript" src="../js/googlemaps.js"></script>
-        <link rel="stylesheet" href="assets/css/modal-geo.css">
+        <link rel="stylesheet" href="assets/css/modal-geo-m.css">
 
     </head>
     <body>
@@ -91,6 +91,21 @@
                             <a href="maps.php">
                             <i class="fa fa-map-marker"></i>
                                 Geolocalizacion
+
+                            </a>
+                        </li>
+                        <?php }?>
+                                <?php
+
+
+                    if($_SESSION['permission']==1 or $_SESSION['permission']==2 ){
+                                                                                    
+                                                                                
+                        ?>
+                        <li>
+                            <a href="chart.php">
+                            <i class="fa fa-dashboard"></i>
+                                Graficos
 
                             </a>
                         </li>
@@ -354,7 +369,7 @@
 		</div>
     </div>
     
-    <script src="../js/modal-geo.js"></script>
+    <script src="../js/modal-geo-m.js"></script>
     </div>
   
   <!-------------------------------------------------------------fin modal-------------------------------------------------------------------->

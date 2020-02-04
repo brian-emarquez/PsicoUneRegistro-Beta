@@ -96,6 +96,19 @@
                         <?php }?>
                                 <?php
 
+                    if($_SESSION['permission']==1 or $_SESSION['permission']==2 ){
+                                                                                                                                                
+                                                                                                                                            
+                        ?>
+                        <li>
+                            <a href="chart.php">
+                            <i class="fa fa-dashboard"></i>
+                                Graficos
+
+                            </a>
+                        </li>
+                        <?php }?>
+                                <?php
 
                     if($_SESSION['permission']==1 or $_SESSION['permission']==2 ){
                         
