@@ -2,6 +2,8 @@
 
 <?php require_once('includes/session.php');
       require_once('includes/conn.php');
+      require_once('includes/db.php');
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,6 +13,11 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
         <title>Agregar Persona</title>
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+  
 
          <!-- Bootstrap CSS CDN -->
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -166,8 +173,52 @@
                         </div>
                     </div>
                 </nav>
+<!-------------------------------------------------------------CHART-INIT--------------------------------------------------------------------->
+
+
+<div class="line" ></div>
+   <div class="container" style="width:900px;">
+   <h5 align="center">Monitor de Eventos </h5>   
+   <br/><br/>
+   <div id="chart-bar"></div>
+
+    <script>
+        Morris.Bar({
+        element : 'chart-bar',
+        data:[<?php echo $chart_data; ?>],
+        xkey:'name',
+        ykeys:['edad'], 
+        labels:['edad'], //mensage
+        hideHover:'auto',
+        stacked:true,
+        });
+    </script>
+
+    <div class="line" ></div>
+    <div class="container" style="width:900px;">
+    <h5 align="center">Monitor de Eventos </h5>   
+    <br/><br/>
+    <div id="chart-line"></div>
+
+
+    <script>
+        Morris.Line({
+        element : 'chart-line',
+        data:[<?php echo $chart_data; ?>],
+        xkey:'year',
+        ykeys:['edad'], 
+        labels:['edad'], //mensage
+        hideHover:'auto',
+        stacked:true,
+        });
+    </script>
+
+<!-------------------------------------------------------------CHART-FIN---------------------------------------------------------------------->
 
               
+
+
+
                 <div class="line"></div>
                  <footer>
                 <p class="text-center"> Psicoune &copy;<?php echo date("Y ");?> <i class="fa fa-map-marker " aria-hidden="true"></i> - CALLE FRANCISCO MOSTAJO 204  - YANAHUARA, Arequipa - Perú </p>
@@ -176,9 +227,6 @@
             </div>
             
         </div>
-
-
-
 
 
         <!-- jQuery CDN -->

@@ -1,7 +1,7 @@
 <?php 
 
-$connect = mysqli_connect("localhost", "briandb", "briandb", "prueba");
-$query = "SELECT * FROM account";
+$connect = mysqli_connect("localhost", "briandb", "briandb", "rpo");
+$query = "SELECT * FROM people";
 $result = mysqli_query($connect, $query);
 $chart_data = '';
 while($row = mysqli_fetch_array($result))

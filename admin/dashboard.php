@@ -4,9 +4,7 @@
        require_once('includes/conn.php');
        require_once('includes/db.php');
        require_once('check.php'); 
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +15,12 @@
 
         <title>Menu Principal</title>
 
-         <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+  
+           <!-- Bootstrap CSS CDN -->
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
         <!-- Our Custom CSS -->
         <link rel="stylesheet" href="assets/css/style.css">
@@ -27,8 +30,7 @@
         <link rel="stylesheet" href="assets/css/animate.css">
         <link rel="stylesheet" href="assets/css/barra.css">
 
-    </head>
-    
+    </head>    
     <body>
         <div class="wrapper">
             <!-- Metro -->
@@ -225,20 +227,13 @@
             </div>
                            
               
-<!-----------------------------------estadistica-Inicio--------------------------------------------->
+<!-------------------------------------------------------Estadistica-Inicio------------------------------------------------------------->
   
   <div class="line" ></div>
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
-  
-
    <div class="container" style="width:900px;">
    <h5 align="center">Monitor de Eventos </h5>   
    <br/><br/>
    <div id="chart-bar"></div>
-
 
     <script>
         Morris.Bar({
@@ -254,7 +249,7 @@
 
     <div class="line" ></div>
     <div class="container" style="width:900px;">
-    <h4 align="center">Monitor de Eventos </h4>   
+    <h5 align="center">Monitor de Eventos </h5>   
     <br/><br/>
     <div id="chart-line"></div>
 
@@ -270,14 +265,9 @@
         stacked:true,
         });
     </script>
+<!----------------------------------------------------------estadistica-Fin-------------------------------------------------------------------->
 
-    
-
- 
-   
-<!-----------------------------------estadistica-Fin----------------------------------------------->
-
-<!-----------------------------------Slide-Inicio-------------------------------------------------->
+<!-----------------------------------------------------------Slide-Inicio---------------------------------------------------------------------->
 
 <div class="line" ></div>
         <div class="efect">

@@ -179,8 +179,7 @@
                             $edad = mysqli_real_escape_string($mysqli,$_POST['edad']);
                             $cursos = mysqli_real_escape_string($mysqli,$_POST['cursos']);
                             $pais = mysqli_real_escape_string($mysqli,$_POST['pais']);
-                            $ciudad = mysqli_real_escape_string($mysqli,$_POST['ciudad']);
-                                                        
+                            $ciudad = mysqli_real_escape_string($mysqli,$_POST['ciudad']);                                                       
                             $joined = date(" d M Y ");
                             $employee_id = rand(9999999,1000000);    
                             $tmp = rand(1,9999);
@@ -194,6 +193,7 @@
                             $fileExt = explode('.', $fileName);
                             $fileActualExt = strtolower(end($fileExt));
                             $allowed = array('jpg','jpeg','png');
+                            $year = date("Y");
     
 
                             $sql_n = "SELECT * FROM people WHERE phone ='$phone'";
@@ -215,7 +215,7 @@
                         }
                     else{      
                   
-                $sql = "INSERT INTO people(name,surname,email,joined,gender,phone,tmp,people_id,dni,edad,cursos,pais,ciudad)VALUES('$name','$surname','$email','$joined','$gender','$phone','$tmp','$employee_id','$dni','$edad','$cursos','$pais','$ciudad')";
+                $sql = "INSERT INTO people(name,surname,email,joined,gender,phone,tmp,people_id,dni,edad,cursos,pais,ciudad,year)VALUES('$name','$surname','$email','$joined','$gender','$phone','$tmp','$employee_id','$dni','$edad','$cursos','$pais','$ciudad','$year')";
                 $results = mysqli_query($mysqli,$sql);
                 if(in_array($fileActualExt, $allowed)){
                 if($fileError === 0){
@@ -321,9 +321,6 @@
             </div> 
           
         </div>
-
-        
-
                 <div class="row">
                 <div class="col-md-6">
                   <button type="submit" name="submit" class="btn btn-suc btn-block"><span class="fa fa-plus"></span> Agregar</button>  
@@ -342,12 +339,7 @@
                 <p class="text-center"> <i class="fa fa-phone" aria-hidden="true">  (054) +51 958 336 625 - 950 319 245 </i> <i class="fa fa-envelope " aria-hidden="true"></i> cursospsicoune@gmail.com </p>
                 </footer>
             </div>
-            
         </div>
-
-
-
-
 
         <!-- jQuery CDN -->
          <script src="assets/js/jquery-1.10.2.js"></script>
