@@ -101,7 +101,7 @@
                         <li>
                             <a href="chart.php">
                             <i class="fa fa-dashboard"></i>
-                                Graficos
+                                Monitor de Eventos
 
                             </a>
                         </li>

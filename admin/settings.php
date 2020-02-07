@@ -89,7 +89,7 @@ $eprow=mysqli_fetch_array($sqlE);
                         <li>
                             <a href="maps.php">
                             <i class="fa fa-map-marker"></i>
-                                Geolocalizacion
+                            Geolocalizacion
 
                             </a>
                         </li>
@@ -104,7 +104,8 @@ $eprow=mysqli_fetch_array($sqlE);
                         <li>
                             <a href="chart.php">
                             <i class="fa fa-dashboard"></i>
-                                Graficos
+                            Monitor de Eventos
+
 
                             </a>
                         </li>

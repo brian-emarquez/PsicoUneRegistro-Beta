@@ -109,7 +109,7 @@
                         <li class="active">
                             <a href="chart.php">
                             <i class="fa fa-dashboard"></i>
-                                Graficos
+                                Monitor de Eventos
 
                             </a>
                         </li>
@@ -174,11 +174,12 @@
                     </div>
                 </nav>
 <!-------------------------------------------------------------CHART-INIT--------------------------------------------------------------------->
+<div class="panel panel-default sammacmedia">
+    <div class="panel-heading"> Monitor de Graficos
+</div>
 
-
-<div class="line" ></div>
-   <div class="container" style="width:900px;">
-   <h5 align="center">Monitor de Eventos </h5>   
+   <div class="container-people" style="width:900px;">
+   <h5 align="center">Monitor de Personas </h5>   
    <br/><br/>
    <div id="chart-bar"></div>
 
@@ -194,24 +195,32 @@
         });
     </script>
 
-    <div class="line" ></div>
-    <div class="container" style="width:900px;">
-    <h5 align="center">Monitor de Eventos </h5>   
-    <br/><br/>
-    <div id="chart-line"></div>
 
+<div class="container-usersrpo" style="width:900px;">
+   <h5 align="center">Monitor de Personas </h5>   
+   <br/><br/>
+   <div id="chart-bar1"></div>
 
     <script>
-        Morris.Line({
-        element : 'chart-line',
-        data:[<?php echo $chart_data; ?>],
-        xkey:'year',
-        ykeys:['edad'], 
-        labels:['edad'], //mensage
+        Morris.Bar({
+        element : 'chart-bar1',
+        data:[<?php echo $chart_data1; ?>],
+        xkey:'username',
+        ykeys:['permision'], 
+        labels:['permision'], //mensage
         hideHover:'auto',
         stacked:true,
         });
     </script>
+
+    
+
+    
+
+    
+
+    
+
 
 <!-------------------------------------------------------------CHART-FIN---------------------------------------------------------------------->
 

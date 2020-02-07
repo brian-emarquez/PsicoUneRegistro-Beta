@@ -88,7 +88,7 @@
                         <li>
                             <a href="maps.php">
                             <i class="fa fa-map-marker"></i>
-                                Geolocalizacion
+                             Geolocalizacion
 
                             </a>
                         </li>
@@ -102,7 +102,7 @@
                         <li>
                             <a href="chart.php">
                             <i class="fa fa-dashboard"></i>
-                                Graficos
+                            Monitor de Eventos
 
                             </a>
                         </li>

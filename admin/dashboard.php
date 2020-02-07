@@ -95,7 +95,7 @@
                         <li>
                             <a href="maps.php">
                             <i class="fa fa-map-marker"></i>
-                                Geolocalizacion
+                            Geolocalizacion
 
                             </a>
                         </li>
@@ -109,7 +109,8 @@
                         <li>
                             <a href="chart.php">
                             <i class="fa fa-dashboard"></i>
-                                Graficos
+                              Monitor de Eventos
+
 
                             </a>
                         </li>
@@ -229,9 +230,9 @@
               
 <!-------------------------------------------------------Estadistica-Inicio------------------------------------------------------------->
   
-  <div class="line" ></div>
+  <div class="line"></div>
    <div class="container" style="width:900px;">
-   <h5 align="center">Monitor de Eventos </h5>   
+   <h5 align="center">Monitor de Eventos - Personas Agregadas </h5>   
    <br/><br/>
    <div id="chart-bar"></div>
 
@@ -247,9 +248,10 @@
         });
     </script>
 
-    <div class="line" ></div>
+    
+<div class="line" ></div>
     <div class="container" style="width:900px;">
-    <h5 align="center">Monitor de Eventos </h5>   
+    <h5 align="center">Monitor de Eventos  - Edades</h5>   
     <br/><br/>
     <div id="chart-line"></div>
 
@@ -258,13 +260,14 @@
         Morris.Line({
         element : 'chart-line',
         data:[<?php echo $chart_data; ?>],
-        xkey:'year',
+        xkey:'edad',
         ykeys:['edad'], 
         labels:['edad'], //mensage
         hideHover:'auto',
         stacked:true,
         });
     </script>
+
 <!----------------------------------------------------------estadistica-Fin-------------------------------------------------------------------->
 
 <!-----------------------------------------------------------Slide-Inicio---------------------------------------------------------------------->
