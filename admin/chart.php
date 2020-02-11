@@ -1,10 +1,10 @@
-<!-- a_people.php -->
+<!-- chart.php -->
 
 <?php require_once('includes/session.php');
       require_once('includes/conn.php');
       require_once('includes/db.php');
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -148,9 +148,9 @@
             <!-- Page Content Holder -->
             <div id="content">
              
-                <div clas="col-md-12">
-                    <!--<img src="assets/image/ssm.jpg" class="img-thumbnail"> -->
-                    </div>
+            <div clas="col-md-12">
+            <img src="assets/image/ssm.jpg" class="img-thumbnail">
+            </div>
          
                 
                <nav class="navbar navbar-default sammacmedia">
@@ -179,7 +179,7 @@
 </div>
 
    <div class="container-people" style="width:900px;">
-   <h5 align="center">Monitor de Personas </h5>   
+   <h5 align="center">Monitor de Personas - Edad </h5>   
    <br/><br/>
    <div id="chart-bar"></div>
 
@@ -189,44 +189,32 @@
         data:[<?php echo $chart_data; ?>],
         xkey:'name',
         ykeys:['edad'], 
-        labels:['edad'], //mensage
+        labels:['Edad'], //mensage
         hideHover:'auto',
         stacked:true,
         });
     </script>
-
-
-<div class="container-usersrpo" style="width:900px;">
-   <h5 align="center">Monitor de Personas </h5>   
+<div class="line"></div>
+<div class="container-people" style="width:900px;">
+   <h5 align="center">Monitor de Personas - DNI </h5>   
    <br/><br/>
    <div id="chart-bar1"></div>
 
     <script>
         Morris.Bar({
         element : 'chart-bar1',
-        data:[<?php echo $chart_data1; ?>],
-        xkey:'username',
-        ykeys:['permision'], 
-        labels:['permision'], //mensage
+        data:[<?php echo $chart_data; ?>],
+        xkey:'name',
+        ykeys:['dni'], 
+        ykeys:['dni'],
+        labels:['DNI'], //mensage
         hideHover:'auto',
         stacked:true,
         });
     </script>
 
-    
-
-    
-
-    
-
-    
-
 
 <!-------------------------------------------------------------CHART-FIN---------------------------------------------------------------------->
-
-              
-
-
 
                 <div class="line"></div>
                  <footer>
@@ -234,7 +222,6 @@
                 <p class="text-center"> <i class="fa fa-phone" aria-hidden="true">  (054) +51 958 336 625 - 950 319 245 </i> <i class="fa fa-envelope " aria-hidden="true"></i> cursospsicoune@gmail.com </p>
                 </footer>
             </div>
-            
         </div>
 
 

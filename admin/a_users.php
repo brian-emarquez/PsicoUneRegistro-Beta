@@ -140,9 +140,9 @@
             <!-- Page Content Holder -->
             <div id="content">
              
-                <div clas="col-md-12 sammacmedia">
-                   
-                    </div>
+            <div clas="col-md-12">
+            <img src="assets/image/ssm.jpg" class="img-thumbnail">
+            </div>
          
                 
                 <nav class="navbar navbar-default">

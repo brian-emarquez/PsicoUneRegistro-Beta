@@ -148,7 +148,7 @@
             <div id="content">
              
                 <div clas="col-md-12"></div>
-                   <!-- <img src="assets/image/rpo.jpeg" class="img-thumbnail">-->
+                <img src="assets/image/ssm.jpg" class="img-thumbnail">
                 <nav class="navbar navbar-default sammacmedia">
                     <div class="container-fluid">
 
@@ -232,6 +232,7 @@
   
   <div class="line"></div>
    <div class="container" style="width:900px;">
+   <a href="chart.php">
    <h5 align="center">Monitor de Eventos - Personas Agregadas </h5>   
    <br/><br/>
    <div id="chart-bar"></div>
