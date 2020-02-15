@@ -4,11 +4,11 @@
 	require 'funcs/funcs.php';
 	
 	if(empty($_GET['user_id'])){
-		header('Location: index.php');
+		header('Location: index2.php');
 	}
 	
 	if(empty($_GET['token'])){
-		header('Location: index.php');
+		header('Location: index2.php');
 	}
 	
 	$user_id = $mysqli->real_escape_string($_GET['user_id']);
@@ -60,7 +60,7 @@ exit;
 		
 		<div class="container-login200" style="background-image: url('images/sam2.jpg');" >
 		<div class="wrap-login200 p-l-55 p-r-55 p-t-80 p-b" >
-		<form class="login200-form validate-form" method="post" action="index.php"></form>
+		<form class="login200-form validate-form" method="post" action="index2.php"></form>
 		
 	</head>
 	
@@ -71,7 +71,7 @@ exit;
 		<div class="panel panel-info" >
 			<div class="panel-heading">
 				<div class="panel-title">Cambiar Password</div>
-				<div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="index.php">Iniciar Sesi&oacute;n</a></div>
+				<div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="index2.php">Iniciar Sesi&oacute;n</a></div>
 			</div>     
 			
 			<div style="padding-top:30px" class="panel-body" >

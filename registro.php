@@ -80,7 +80,7 @@
 						if(enviarEmail($email, $nombre, $asunto, $cuerpo)){
 						
 						echo "Para terminar el proceso de registro siga las instrucciones que le hemos enviado la direccion de correo electronico: $email";
-						echo "<br><a href='index.php'>Iniciar Sesion</a>";
+						echo "<br><a href='index2.php'>Iniciar Sesion</a>";
 						exit;
 						
 						} else {
@@ -135,9 +135,9 @@
 	<head>
 		<title>Registro</title>
 
-		<div class="container-login200" style="background-image: url('images/sam2.jpg');" >
+		<div class="container-login200" style="background-image: url('images/sam1.jpg');" >
 		<div class="wrap-login200 p-l-55 p-r-55 p-t-80 p-b" >
-		<form class="login200-form validate-form" method="post" action="index.php"></form>
+		<form class="login200-form validate-form" method="post" action="index2.php"></form>
 
 		<script src='https://www.google.com/recaptcha/api.js'></script>
 		
@@ -155,7 +155,7 @@
 					
 					   </div>
 						<p><hr width=100%  align="center" size=20><p>
-						<div style="float:right; font-size: 85%; position: relative; top:-50px"><a id="signinlink" href="index.php">Iniciar Sesi&oacute;n</a></div>
+						<div style="float:right; font-size: 85%; position: relative; top:-50px"><a id="signinlink" href="index2.php">Iniciar Sesi&oacute;n</a></div>
 					</div>  
 					<div class="panel-body" >
 						

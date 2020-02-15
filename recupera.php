@@ -30,7 +30,7 @@
 				if(enviarEmail($email, $nombre, $asunto, $cuerpo))
 				{
 					echo "Hemos enviado un correo electronico a la direccion $email para restablecer tu pasaword.<br/>";
-					echo "<br><a href='index.php'>Iniciar Sesion</a>";
+					echo "<br><a href='index2.php'>Iniciar Sesion</a>";
 					exit;
 				}
 				else{
@@ -79,9 +79,9 @@
 <html>
 	<head>
 		<title>Recuperar Contraseña</title>
-		<div class="container-login200" style="background-image: url('images/sam2.jpg');" >
+		<div class="container-login200" style="background-image: url('images/sam1.jpg');" >
 		<div class="wrap-login200 p-l-55 p-r-55 p-t-80 p-b" >
-		<form class="login200-form validate-form" method="post" action="index.php"></form>
+		<form class="login200-form validate-form" method="post" action="index2.php"></form>
 
 	</head>
 	
@@ -92,7 +92,7 @@
 				<div class="panel panel-info" >
 					<div class="panel-heading">
 						<div class="panel-title">Recuperar Contraseña</div>
-						<div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="index.php">Iniciar Sesi&oacute;n</a></div>
+						<div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="index2.php">Iniciar Sesi&oacute;n</a></div>
 					</div>     
 					
 					<div style="padding-top:30px" class="panel-body" >

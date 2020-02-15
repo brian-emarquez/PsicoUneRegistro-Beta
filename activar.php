@@ -28,7 +28,7 @@
 				
 				<h1><?php echo $mensaje; ?></h1>
 				
-				<p><a class="btn btn-primary btn-lg" href="index.php" role="button">Iniciar Sesi&oacute;n</a></p>
+				<p><a class="btn btn-primary btn-lg" href="index2.php" role="button">Iniciar Sesi&oacute;n</a></p>
 			</div>
 		</div>
 	</body>
