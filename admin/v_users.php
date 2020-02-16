@@ -141,8 +141,8 @@
             <div id="content">
              
             <div clas="col-md-12">
-            <img src="assets/image/ssm.jpg" class="img-thumbnail">
-            </div>
+                <!--<img src="assets/image/ssm.jpg" class="img-thumbnail">-->
+                </div>
          
                 
                 <nav class="navbar navbar-default sammacmedia">
@@ -258,18 +258,10 @@
             </footer>
             </div>
 
-<!--flex derecho-->
-
-
-            
+<!--flex derecho-->            
 <!--flex derecho-->
             
         </div>
-
-
-
-
-
          <script src="assets/js/jquery-1.10.2.js"></script>
          <script src="assets/js/bootstrap.min.js"></script>
          <script src="vendors/datatables/datatables.min.js"></script>

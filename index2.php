@@ -75,7 +75,7 @@ if(isset($mysqli,$_POST['submit'])){
 				<span class="login100-form-title p-b-37">
 					REGISTRO
 				</span>
-				<center><div style="float:center; font-size: 80%; position: relative; top:-10px"><a href="index.html">Regresar Menu Principal</a></div><center>
+				<center><div style="float:center; font-size: 80%; position: relative; top:-10px"><a href="index.html"><i class="fa fa-chevron-left" aria-hidden="true"></i> Regresar</a></div><center>
 
 				<div class="wrap-input100 validate-input m-b-20" data-validate="Enter username ">
 					<input class="input100" type="text" name="username" placeholder="Usuario">
@@ -101,7 +101,6 @@ if(isset($mysqli,$_POST['submit'])){
 						INGRESAR
 					</button>
 				</div>
-
 			</form>
 		</div>
 	</div>

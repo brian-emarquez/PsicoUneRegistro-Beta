@@ -138,8 +138,8 @@
             <div id="content">
              
             <div clas="col-md-12">
-            <img src="assets/image/ssm.jpg" class="img-thumbnail">
-            </div>
+                <!--<img src="assets/image/ssm.jpg" class="img-thumbnail">-->
+                </div>
          
                 
                 <nav class="navbar navbar-default sammacmedia">
@@ -180,10 +180,6 @@
                     <th> Celular </th>
                     <th> Género </th>
                     <th> Acción </th>
-                    
-
-                    
-                    
                     </tr>
                 </thead>
                 

@@ -148,7 +148,7 @@
             <div id="content">
              
                 <div clas="col-md-12"></div>
-                <img src="assets/image/ssm.jpg" class="img-thumbnail">
+                <!--<img src="assets/image/ssm.jpg" class="img-thumbnail">-->
                 <nav class="navbar navbar-default sammacmedia">
                     <div class="container-fluid">
 
@@ -211,14 +211,14 @@
 
                 <div class="col-lg-6 col-md-6" >
                 <div class="panel panel strover sammacmedia" style="background-color:#0A63A5" >
-                    <a href="settings.php">
+                    <a href="a_people.php">
                         <div class="panel-heading" >
                             <div class="row">
                                 <div class="col-xs-4">
                                     <i class="fa fa-cogs fa-5x" ></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge"><?php echo $cases;?></div>
+                                    <div class="huge"><?php echo $people;?></div>
                                     <div>Ajustes del Usuarios</div>
                                 </div>
                             </div>

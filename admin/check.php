@@ -7,5 +7,8 @@
       $result2=mysqli_query($mysqli,$sql2);
       $values=mysqli_fetch_assoc($result2);
       $cases=$values['total2'];
-
+  $sql3 ="SELECT count(id) As total3 FROM people ";
+      $result3=mysqli_query($mysqli,$sql3);
+      $values=mysqli_fetch_assoc($result3);
+      $people=$values['total3'];
 ?>
