@@ -199,8 +199,15 @@
                             <td><?php echo $row['gender'];?></td>  
                             
                             <td>
-                            <a href="#samstrover<?php echo $row['id']; ?>" data-toggle="modal" class="btn btn-warning"><span class="fa fa-pencil"></span> VER </a> || <a href="all_people.php?edited=1&idx=<?php echo $row['id']; ?>" data-toggle="modal" class="btn btn-danger"><span class="fa fa-times"></span> ELIMINAR</a>
-                              </td>
+                            <a href="#samstrover<?php echo $row['id']; ?>" data-toggle="modal" class="btn btn-warning"><span class="fa fa-pencil"></span> VER </a>
+                            <?php
+
+                            if($_SESSION['permission']==1 or $_SESSION['permission']==2 ){
+                            ?>
+                             ||
+                            <a href="all_people.php?edited=1&idx=<?php echo $row['id']; ?>" data-toggle="modal" class="btn btn-danger"><span class="fa fa-times"></span> ELIMINAR</a>
+                            <?php }?>
+                        </td>
                           </tr>
                           <?php
                         require('userInfo.php');

@@ -169,9 +169,10 @@
                         </div>
                     </div>
                 </nav>
+                <h5 align="center">Fichas rápidas</h5>   
                 <div class="line"></div>
                 <div class="row">
-                         
+
                 <div class="col-lg-6 col-md-6 ">
                     <div class="panel panel sammac sammacmedia">
                     <a href="v_users.php">
@@ -229,8 +230,11 @@
                            
               
 <!-------------------------------------------------------Estadistica-Inicio------------------------------------------------------------->
-  
-  <div class="line"></div>
+<?php
+    if($_SESSION['permission']==1 or $_SESSION['permission']==2 ){
+  ?>  
+
+<div class="line"></div>
    <div class="container" style="width:900px;">
    <a href="chart.php">
    <h5 align="center">Monitor de Eventos - Personas Agregadas </h5>   
@@ -269,6 +273,8 @@
         });
     </script>
 
+<?php }?>
+                             
 <!----------------------------------------------------------estadistica-Fin-------------------------------------------------------------------->
 
 <!-----------------------------------------------------------Slide-Inicio---------------------------------------------------------------------->
@@ -278,8 +284,8 @@
             <li >
                 <a href="https://www.facebook.com/psicouneorg/">
                     <div class="icon" >  
-                         <i class="fa fa-facebook-official" aria-hidden="true"></i>
-                         <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                         <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                         <i class="fa fa-facebook-square" aria-hidden="true"></i>
                      </div> 
                     <div class="name"><span data-text="Facebook" >Facebook </span></div>            
                 </a>
@@ -308,8 +314,8 @@
             <li>
                 <a href="https://www.psicoune.org/social/whatsapp">
                     <div class="icon">
-                        <i class="fa fa-whatsapp" aria-hidden="true"></i>
-                        <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                        <i class="fa fa-comments" aria-hidden="true"></i>
+                        <i class="fa fa-comments" aria-hidden="true"></i>
                     </div>  
                     <div class="name"><span data-text="Whatsapp">Whatsapp</span></div>            
                 </a>
@@ -323,14 +329,14 @@
                 <p class="text-center"> Psicoune &copy;<?php echo date("Y ");?> <i class="fa fa-map-marker " aria-hidden="true"></i> - CALLE FRANCISCO MOSTAJO 204  - YANAHUARA, Arequipa - Perú </p>
                 <p class="text-center"> <i class="fa fa-phone" aria-hidden="true">  (054) +51 958 336 625 - 950 319 245 </i> <i class="fa fa-envelope " aria-hidden="true"></i> cursospsicoune@gmail.com </p>
             </footer>
+            <!-- Contador de visitas -->
+            <center><a href="http://www.websmultimedia.com/contador-de-visitas-gratis" title="Contador De Visitas Gratis">
+            <img style="border: 0px solid; display: inline;" alt="contador de visitas" src="http://www.websmultimedia.com/contador-de-visitas.php?id=276615"></a><br><a href='http://www.websmultimedia.com/contador-de-visitas-gratis'></a><br><a href='http://boxindian.com/'></a></center>
+            <!-- Fin Contador de visitas -->
         </div>
 
 
-        <!-- Contador de visitas -->
-<center><a href="http://www.websmultimedia.com/contador-de-visitas-gratis" title="Contador De Visitas Gratis">
-<img style="border: 0px solid; display: inline;" alt="contador de visitas" src="http://www.websmultimedia.com/contador-de-visitas.php?id=276615"></a><br><a href='http://www.websmultimedia.com/contador-de-visitas-gratis'></a><br><a href='http://boxindian.com/'></a></center>
-<!-- Fin Contador de visitas -->
-       
+
 </div>
 
 <!-- jQuery CDN -->
