@@ -212,8 +212,7 @@
                               
                               </td>
                             <td>
-                  <a href="v_issue.php?edited=1&idx=<?php echo $row['id']; ?>" data-toggle="modal" class="btn btn-danger"><span class="fa fa-times"></span> Eliminar</a> || <a href="#samstrover<?php echo $row['people_id']; ?>" data-toggle="modal" class="btn btn-warning"><span class="fa fa-pencil"></span> Ver</a> 
-                              </td>
+                            <a href="v_issue.php?edited=1&idx=<?php echo $row['id']; ?>" data-toggle="modal" class="btn btn-danger"><span class="fa fa-times"></span> Eliminar</a> || <a href="#samstrover<?php echo $row['people_id']; ?>" data-toggle="modal" class="btn btn-warning"><span class="fa fa-pencil"></span> Ver</a>                               </td>
                           </tr>
                           <?php
                          require('userInfos.php');

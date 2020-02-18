@@ -70,13 +70,12 @@ if(isset($mysqli,$_POST['submit'])){
 		<div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
 			<form class="login100-form validate-form" method="post" action="index2.php">
 					
-						<center><div style="float:center; font-size: 80%; position: relative; top:-10px"><a href="recupera.php">¿Se te olvid&oacute; tu contraseña?</a></div><center>
-
+				<center><div style="float:center; font-size: 80%; position: relative; top:-10px"><a href="index.html"> Pantalla Principal</a></div><center>
+				<br>
+				<center><div style="float:center; font-size: 80%; position: relative; top:-10px"><a href="recupera.php">¿Se te olvid&oacute; tu contraseña?</a></div><center>
 				<span class="login100-form-title p-b-37">
 					REGISTRO
 				</span>
-				<center><div style="float:center; font-size: 80%; position: relative; top:-10px"><a href="index.html"><i class="fa fa-chevron-left" aria-hidden="true"></i>  Regresar</a></div><center>
-
 				<div class="wrap-input100 validate-input m-b-20" data-validate="Enter username ">
 					<input class="input100" type="text" name="username" placeholder="Usuario">
 					<span class="focus-input100"></span>

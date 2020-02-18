@@ -1,4 +1,4 @@
-<div class="modal fade" id="samstrover<?php echo $row['employee_id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="samstrover<?php echo $row['people_id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -6,12 +6,12 @@
                     <center><h4 class="modal-title" id="myModalLabel">Employee Information</h4></center>
                 </div>
              <?php
-					$pro=mysqli_query($mysqli,"select * from employees where employee_id='".$row['employee_id']."'");
+					$pro=mysqli_query($mysqli,"select * from people where people_id='".$row['people_id']."'");
 					$prow=mysqli_fetch_array($pro);
                     $tmp = $prow['tmp'];
 				?>
 				<div class="row">
-                     <p class="text-center">Employee Id: <?php echo $prow['employee_id'];?></p>
+                     <p class="text-center">Persona Id: <?php echo $prow['people_id'];?></p>
                     <div class="col-md-4">
                     </div>
                     <div class="col-md-4 text-center">
