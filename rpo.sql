@@ -29,7 +29,7 @@ CREATE TABLE `cases` (
   `notes` varchar(200) NOT NULL,
   `case_num` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,6 +38,7 @@ CREATE TABLE `cases` (
 
 LOCK TABLES `cases` WRITE;
 /*!40000 ALTER TABLE `cases` DISABLE KEYS */;
+INSERT INTO `cases` VALUES (9,'1095288','Crítico','<p>agregar mas opciones</p>','20200217190646.1156'),(10,'6407816','Peligro','<p>fgdfgdfgdfg</p>','20200218181208.9893'),(11,'6407816','Crítico','<p>mmmmmmmmmmmmmmmm</p>','20200218181405.3877');
 /*!40000 ALTER TABLE `cases` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -66,7 +67,7 @@ CREATE TABLE `people` (
   `id_tipo` int(11) DEFAULT NULL,
   `year` int(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -75,7 +76,7 @@ CREATE TABLE `people` (
 
 LOCK TABLES `people` WRITE;
 /*!40000 ALTER TABLE `people` DISABLE KEYS */;
-INSERT INTO `people` VALUES (1,'8682146','mario','martinez','5496969696','mario@gmail.com','M',' 06 Feb 2020 ','4997',23456789,12,'Cuidadania y realidad Nacional','Peru','Arequipa',NULL,2020),(2,'9262079','Carlos','Castillo','5412345678','carlos@gmail.com','M',' 06 Feb 2020 ','6882',12345678,25,'Gestiojn de Procesos de Negocio','Peru','Arequipa',NULL,2020),(3,'3739446','Carlos','jimenez','5469696969','carlos1@gmail.com','M',' 07 Feb 2020 ','5459',12345678,34,'Cuidadania y realidad Nacional','Peru','Arequipa',NULL,2020),(4,'6407816','luis','medina','54123456479','luis1@gmail.com','M',' 07 Feb 2020 ','637',47092136,20,'Cuidadania y realidad Nacional','Peru','Arequipa',NULL,2020);
+INSERT INTO `people` VALUES (4,'6407816','luis','medina','54123456479','luis1@gmail.com','M',' 07 Feb 2020 ','637',47092136,20,'Cuidadania y realidad Nacional','Peru','Arequipa',NULL,2020),(5,'1095288','Alonzo Enrique','Aco Acosta','54958623145','alonzo@gmail.com','M',' 17 Feb 2020 ','3857',23651236,30,'Inteligencia Emocional ','Peru','Arequipa',NULL,2020);
 /*!40000 ALTER TABLE `people` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -91,7 +92,7 @@ CREATE TABLE `picture` (
   `tmp` varchar(90) NOT NULL,
   `name` varchar(60) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -100,7 +101,7 @@ CREATE TABLE `picture` (
 
 LOCK TABLES `picture` WRITE;
 /*!40000 ALTER TABLE `picture` DISABLE KEYS */;
-INSERT INTO `picture` VALUES (17,'544','user544.jpg'),(18,'4982','user4982.jpg'),(19,'1439','user1439.jpg'),(20,'4509','user4509.png'),(21,'47','user47.png'),(22,'6171','user6171.png'),(23,'7591','user7591.jpg'),(24,'4997','user4997.jpg'),(25,'6882','user6882.jpg'),(26,'5459','user5459.jpg'),(27,'637','user637.jpg');
+INSERT INTO `picture` VALUES (17,'544','user544.jpg'),(18,'4982','user4982.jpg'),(19,'1439','user1439.jpg'),(20,'4509','user4509.png'),(21,'47','user47.png'),(22,'6171','user6171.png'),(23,'7591','user7591.jpg'),(24,'4997','user4997.jpg'),(25,'6882','user6882.jpg'),(26,'5459','user5459.jpg'),(27,'637','user637.jpg'),(28,'6774','user6774.jpg'),(29,'3857','user3857.jpg');
 /*!40000 ALTER TABLE `picture` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -158,7 +159,7 @@ CREATE TABLE `usersrpo` (
   `permission` varchar(10) NOT NULL,
   `year` int(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -167,9 +168,17 @@ CREATE TABLE `usersrpo` (
 
 LOCK TABLES `usersrpo` WRITE;
 /*!40000 ALTER TABLE `usersrpo` DISABLE KEYS */;
-INSERT INTO `usersrpo` VALUES (2,'Brian Enrique','Marquez Inca Roca','briandb','briandb','brian3marquez@gmail.com',NULL,1,'9435e651045639458fa7f2d4df004fa5',NULL,0,' 07 Feb 2020 ',NULL,NULL,'user','1',2020),(3,'maria','isabel','mariadb','mariadb','fanolaf924@mailmink.com',NULL,1,'5abde0375a691c63ee864a16fd2711d8',NULL,0,' 16 Feb 2020 ',NULL,NULL,'user','3',2020);
+INSERT INTO `usersrpo` VALUES (2,'Brian Enrique','Marquez Inca Roca','briandb','briandb','brian3marquez@gmail.com',NULL,1,'9435e651045639458fa7f2d4df004fa5',NULL,0,' 07 Feb 2020 ',NULL,NULL,'user','1',2020),(7,'Alonzo Enrique','Aco Acosta','Alonzodb1','Alonzodb','nidowe6806@jszmail.com',NULL,1,'9ce4770f683ce6e1809fea0388206fc0','',0,' 17 Feb 2020 ',NULL,NULL,'user','3',2020);
 /*!40000 ALTER TABLE `usersrpo` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Dumping events for database 'rpo'
+--
+
+--
+-- Dumping routines for database 'rpo'
+--
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -180,4 +189,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-02-16 22:14:38
+-- Dump completed on 2020-02-18 17:34:59
